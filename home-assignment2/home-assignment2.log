@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  29 MAR 2024 19:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  29 MAR 2024 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -61,18 +61,11 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutvoffset=\dimen153
 \Gm@dimlist=\toks18
 )
-(/usr/local/texlive/2023/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
-
-\f@nch@headwidth=\skip52
-\f@nch@O@elh=\skip53
-\f@nch@O@erh=\skip54
-\f@nch@O@olh=\skip55
-\f@nch@O@orh=\skip56
-\f@nch@O@elf=\skip57
-\f@nch@O@erf=\skip58
-\f@nch@O@olf=\skip59
-\f@nch@O@orf=\skip60
+(/usr/local/texlive/2023/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks19
+\AP@partial=\box52
+\AP@footins=\box53
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
 Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
@@ -103,10 +96,10 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 (/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count196
-\float@exts=\toks19
-\float@box=\box52
-\@float@everytoks=\toks20
-\@floatcapt=\box53
+\float@exts=\toks20
+\float@box=\box54
+\@float@everytoks=\toks21
+\@floatcapt=\box55
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2023/02/19 v1.6 Sub-captions (AR)
@@ -137,10 +130,10 @@ Package caption Info: New subtype `subtable' on input line 239.
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip61
+\labelindent=\skip52
 \enit@outerparindent=\dimen164
-\enit@toks=\toks21
-\enit@inbox=\box54
+\enit@toks=\toks22
+\enit@inbox=\box56
 \enit@count@id=\count267
 \enitdp@description=\count268
 )
@@ -163,7 +156,7 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \c@tracingmulticols=\count270
-\mult@box=\box55
+\mult@box=\box57
 \multicol@leftmargin=\dimen165
 \c@unbalance=\count271
 \c@collectmore=\count272
@@ -174,17 +167,15 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \page@free=\dimen167
 \premulticols=\dimen168
 \postmulticols=\dimen169
-\multicolsep=\skip62
-\multicolbaselineskip=\skip63
-\partial@page=\box56
-\last@line=\box57
+\multicolsep=\skip53
+\multicolbaselineskip=\skip54
+\partial@page=\box58
+\last@line=\box59
 \maxbalancingoverflow=\dimen170
-\mult@rightbox=\box58
-\mult@grightbox=\box59
-\mult@firstbox=\box60
-\mult@gfirstbox=\box61
-\@tempa=\box62
-\@tempa=\box63
+\mult@rightbox=\box60
+\mult@grightbox=\box61
+\mult@firstbox=\box62
+\mult@gfirstbox=\box63
 \@tempa=\box64
 \@tempa=\box65
 \@tempa=\box66
@@ -219,31 +210,33 @@ Package: multicol 2021/11/30 v1.9d multicolumn formatting (FMi)
 \@tempa=\box95
 \@tempa=\box96
 \@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
 \c@minrows=\count276
 \c@columnbadness=\count277
 \c@finalcolumnbadness=\count278
 \last@try=\dimen171
 \multicolovershoot=\dimen172
 \multicolundershoot=\dimen173
-\mult@nat@firstbox=\box98
-\colbreak@box=\box99
+\mult@nat@firstbox=\box100
+\colbreak@box=\box101
 \mc@col@check@num=\count279
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks22
-\thm@bodyfont=\toks23
-\thm@headfont=\toks24
-\thm@notefont=\toks25
-\thm@headpunct=\toks26
-\thm@preskip=\skip64
-\thm@postskip=\skip65
-\thm@headsep=\skip66
-\dth@everypar=\toks27
+\thm@style=\toks23
+\thm@bodyfont=\toks24
+\thm@headfont=\toks25
+\thm@notefont=\toks26
+\thm@headpunct=\toks27
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks28
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2023/02/17 v0.75
-\thmt@toks=\toks28
+\thmt@toks=\toks29
 \c@thmt@dummyctr=\count280
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thm-patch.sty
@@ -251,7 +244,7 @@ Package: thm-patch 2023/02/17 v0.75
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/parseargs.sty
 Package: parseargs 2023/02/17 v0.75
-\@parsespec=\toks29
+\@parsespec=\toks30
 ))
 (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thm-kv.sty
 Package: thm-kv 2023/02/17 v0.75
@@ -272,7 +265,7 @@ Package: thm-restate 2023/02/17 v0.75
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
 Package: thm-amsthm 2023/02/17 v0.75
-\thmt@style@headstyle=\toks30
+\thmt@style@headstyle=\toks31
 ))
 (/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
@@ -298,7 +291,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks31
+\@emptytoks=\toks32
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
@@ -307,7 +300,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2022/04/08 v2.17n AMS math features
-\@mathmargin=\skip67
+\@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -315,7 +308,7 @@ Package: amstext 2021/08/26 v2.01 AMS text
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks32
+\@emptytoks=\toks33
 \ex@=\dimen174
 ))
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -336,8 +329,8 @@ LaTeX Info: Redefining \colon on input line 410.
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
-\Mathstrutbox@=\box100
-\strutbox@=\box101
+\Mathstrutbox@=\box102
+\strutbox@=\box103
 LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
@@ -355,21 +348,21 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \dotsspace@=\muskip16
 \c@parentequation=\count288
 \dspbrk@lvl=\count289
-\tag@help=\toks33
+\tag@help=\toks34
 \row@=\count290
 \column@=\count291
 \maxfields@=\count292
-\andhelp@=\toks34
+\andhelp@=\toks35
 \eqnshift@=\dimen177
 \alignsep@=\dimen178
 \tagshift@=\dimen179
 \tagwidth@=\dimen180
 \totwidth@=\dimen181
 \lineht@=\dimen182
-\@envbody=\toks35
-\multlinegap=\skip68
-\multlinetaggap=\skip69
-\mathdisplay@stack=\toks36
+\@envbody=\toks36
+\multlinegap=\skip59
+\multlinetaggap=\skip60
+\mathdisplay@stack=\toks37
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
@@ -378,12 +371,12 @@ LaTeX Info: Redefining \] on input line 2954.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
 x
-\pgfutil@everybye=\toks37
+\pgfutil@everybye=\toks38
 \pgfutil@tempdima=\dimen183
 \pgfutil@tempdimb=\dimen184
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box102
+\pgfutil@abb=\box104
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
@@ -395,12 +388,12 @@ Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks38
-\pgfkeys@temptoks=\toks39
+\pgfkeys@pathtoks=\toks39
+\pgfkeys@temptoks=\toks40
 
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
 tered.code.tex
-\pgfkeys@tmptoks=\toks40
+\pgfkeys@tmptoks=\toks41
 ))
 \pgf@x=\dimen185
 \pgf@y=\dimen186
@@ -418,9 +411,9 @@ tered.code.tex
 \c@pgf@countb=\count294
 \c@pgf@countc=\count295
 \c@pgf@countd=\count296
-\t@pgf@toka=\toks41
-\t@pgf@tokb=\toks42
-\t@pgf@tokc=\toks43
+\t@pgf@toka=\toks42
+\t@pgf@tokb=\toks43
+\t@pgf@tokc=\toks44
 \pgf@sys@id@count=\count297
 
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
@@ -453,10 +446,10 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen195
 \pgfmath@count=\count300
-\pgfmath@box=\box103
-\pgfmath@toks=\toks44
-\pgfmath@stack@operand=\toks45
-\pgfmath@stack@operation=\toks46
+\pgfmath@box=\box105
+\pgfmath@toks=\toks45
+\pgfmath@stack@operand=\toks46
+\pgfmath@stack@operation=\toks47
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
 tex)
@@ -513,9 +506,9 @@ File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
 de.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfpic=\box104
-\pgf@hbox=\box105
-\pgf@layerbox@main=\box106
+\pgfpic=\box106
+\pgf@hbox=\box107
+\pgf@layerbox@main=\box108
 \pgf@picture@serial@count=\count302
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
@@ -561,7 +554,7 @@ File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
 code.tex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfexternal@startupbox=\box107
+\pgfexternal@startupbox=\box109
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
 de.tex
@@ -582,7 +575,7 @@ File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
 e.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodeparttextbox=\box108
+\pgfnodeparttextbox=\box110
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
 tex
@@ -607,8 +600,8 @@ Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen278
 \pgffor@skip=\dimen279
-\pgffor@stack=\toks47
-\pgffor@toks=\toks48
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
 ))
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
 e.tex
@@ -628,10 +621,10 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@lastmovetoy=\dimen286
 \tikzleveldistance=\dimen287
 \tikzsiblingdistance=\dimen288
-\tikz@figbox=\box109
-\tikz@figbox@bg=\box110
-\tikz@tempbox=\box111
-\tikz@tempbox@bg=\box112
+\tikz@figbox=\box111
+\tikz@figbox@bg=\box112
+\tikz@tempbox=\box113
+\tikz@tempbox@bg=\box114
 \tikztreelevel=\count306
 \tikznumberofchildren=\count307
 \tikznumberofcurrentchild=\count308
@@ -658,8 +651,8 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 
 (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks49
-\XKV@tempa@toks=\toks50
+\XKV@toks=\toks50
+\XKV@tempa@toks=\toks51
 )
 \XKV@depth=\count314
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
@@ -748,26 +741,26 @@ File: tikzlibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
 shapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfnodepartlowerbox=\box113
-\pgfnodeparttwobox=\box114
-\pgfnodepartthreebox=\box115
-\pgfnodepartfourbox=\box116
-\pgfnodeparttwentybox=\box117
-\pgfnodepartnineteenbox=\box118
-\pgfnodeparteighteenbox=\box119
-\pgfnodepartseventeenbox=\box120
-\pgfnodepartsixteenbox=\box121
-\pgfnodepartfifteenbox=\box122
-\pgfnodepartfourteenbox=\box123
-\pgfnodepartthirteenbox=\box124
-\pgfnodeparttwelvebox=\box125
-\pgfnodepartelevenbox=\box126
-\pgfnodeparttenbox=\box127
-\pgfnodepartninebox=\box128
-\pgfnodeparteightbox=\box129
-\pgfnodepartsevenbox=\box130
-\pgfnodepartsixbox=\box131
-\pgfnodepartfivebox=\box132
+\pgfnodepartlowerbox=\box115
+\pgfnodeparttwobox=\box116
+\pgfnodepartthreebox=\box117
+\pgfnodepartfourbox=\box118
+\pgfnodeparttwentybox=\box119
+\pgfnodepartnineteenbox=\box120
+\pgfnodeparteighteenbox=\box121
+\pgfnodepartseventeenbox=\box122
+\pgfnodepartsixteenbox=\box123
+\pgfnodepartfifteenbox=\box124
+\pgfnodepartfourteenbox=\box125
+\pgfnodepartthirteenbox=\box126
+\pgfnodeparttwelvebox=\box127
+\pgfnodepartelevenbox=\box128
+\pgfnodeparttenbox=\box129
+\pgfnodepartninebox=\box130
+\pgfnodeparteightbox=\box131
+\pgfnodepartsevenbox=\box132
+\pgfnodepartsixbox=\box133
+\pgfnodepartfivebox=\box134
 )))
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarydecorations.markings.code.tex
@@ -784,15 +777,15 @@ s.code.tex
 \pgfdecorationsegmentamplitude=\dimen299
 \pgfdecorationsegmentlength=\dimen300
 )
-\tikz@lib@dec@box=\box133
+\tikz@lib@dec@box=\box135
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
 brarydecorations.markings.code.tex))
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box134
-\pgf@layerboxsaved@background=\box135
+\pgf@layerbox@background=\box136
+\pgf@layerboxsaved@background=\box137
 )
 (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryintersections.code.tex
@@ -929,7 +922,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip70
+\Hy@SectionHShift=\skip61
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 41.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/cleveref/cleveref.sty
@@ -964,36 +957,36 @@ LaTeX Warning: Command \underline  has changed.
 \c@exercise=\count329
 \c@remark=\count330
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
-84.
+77.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count331
-\l__pdf_internal_box=\box136
+\l__pdf_internal_box=\box138
 )
 (./home-assignment2.aux)
 \openout1 = `home-assignment2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1033,15 +1026,15 @@ LaTeX Font Info:    ... okay on input line 184.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count332
 \scratchdimen=\dimen305
-\scratchbox=\box137
+\scratchbox=\box139
 \nofMPsegments=\count333
 \nofMParguments=\count334
-\everyMPshowfont=\toks51
+\everyMPshowfont=\toks52
 \MPscratchCnt=\count335
 \MPscratchDim=\dimen306
 \MPnumerator=\count336
 \makeMPintoPDFobject=\count337
-\everyMPtoPDFconversion=\toks52
+\everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1054,60 +1047,60 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 184.
+Package hyperref Info: Link coloring ON on input line 177.
 
 (./home-assignment2.out) (./home-assignment2.out)
 \@outlinefile=\write4
 \openout4 = `home-assignment2.out'.
 
-Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
-ine 188.
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-90.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 19
-0.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 18
+1.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 19
-0.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 18
+1.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for U+zeuex on input line 1
-90.
+81.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
-ne 202.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 205.
-Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
-ut line 214.
- [1{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/
-local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
+Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
+ine 190.
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
+92.
 
-] [2] [3] [4]
-(./home-assignment2.aux)
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
+File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
+)
+Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
+ne 204.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
+ line 207.
+ [1
+
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
+ut line 217.
+ [2] [3] [4] (./home-assignment2.aux)
 Package rerunfilecheck Info: File `home-assignment2.out' has not changed.
-(rerunfilecheck)             Checksum: A36B73CC529EA0435C5BCDC31BA0F647;258.
+(rerunfilecheck)             Checksum: 9C1D9FB97E772312B4B6BD5E4AF11399;224.
  ) 
 Here is how much of TeX's memory you used:
- 30544 strings out of 476025
- 621602 string characters out of 5790018
- 1869388 words of memory out of 5000000
- 50428 multiletter control sequences out of 15000+600000
- 526678 words of font info for 73 fonts, out of 8000000 for 9000
+ 30401 strings out of 476025
+ 619946 string characters out of 5790018
+ 1866388 words of memory out of 5000000
+ 50283 multiletter control sequences out of 15000+600000
+ 529196 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,13n,85p,1205b,522s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,8n,85p,1205b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pf
@@ -1120,10 +1113,10 @@ m10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols
 .pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on home-assignment2.pdf (4 pages, 123901 bytes).
+Output written on home-assignment2.pdf (4 pages, 125896 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 129 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
+ 30 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
