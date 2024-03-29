@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  29 MAR 2024 20:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  29 MAR 2024 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1053,9 +1053,13 @@ Package hyperref Info: Link coloring ON on input line 177.
 \@outlinefile=\write4
 \openout4 = `home-assignment2.out'.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
+
+ []
+
 LaTeX Font Info:    Trying to load font information for U+zeur on input line 18
 1.
-
 (/usr/local/texlive/2023/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 )
@@ -1113,7 +1117,7 @@ m10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols
 .pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/lo
 cal/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on home-assignment2.pdf (4 pages, 125896 bytes).
+Output written on home-assignment2.pdf (4 pages, 126476 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  98 compressed objects within 1 object stream
