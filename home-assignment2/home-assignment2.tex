@@ -1,0 +1,324 @@
+\documentclass{article}
+\usepackage{titlesec}
+
+%Paquetes
+\usepackage[left=4cm, right=4cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{palatino}%Fuente
+ \usepackage{eulervm}%Fuente
+\usepackage{graphicx}%Imágenes
+\usepackage{float}%Imágenes
+\usepackage{subcaption}%Imágenes
+\usepackage{enumitem}%Listas
+\usepackage{parskip}%Espacio entre párrafos
+\usepackage{multicol}
+\usepackage{amsthm,thmtools,xcolor}
+\usepackage{amssymb}%Mate
+\usepackage{amsmath}%Mate
+\usepackage{tikz}%Mate (diagramas)
+\usepackage{dutchcal}
+\usepackage{tikz-cd}
+\usepackage{xcolor}
+\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\usetikzlibrary{%
+	matrix,%
+	calc,%
+	arrows,%
+	shapes,
+	decorations.markings,backgrounds,calc,intersections
+}
+\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}%Links a lugares en el texto
+\hypersetup{%colores
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=magenta,
+	citecolor=blue,
+	filecolor=blue,
+	urlbordercolor=white,
+	linkbordercolor=white,
+	citebordercolor=white,
+	filebordercolor=white
+}
+\usepackage{cleveref}
+\Crefname{exercise}{Exercise}{Exercises}
+
+\newcommand{\fakesection}[1]{%
+	\par\refstepcounter{section}% Increase section counter
+	\sectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}% Add section to ToC
+	% Add more content here, if needed.
+}
+
+\makeatletter %Hide section number
+\def\@seccntformat#1{%
+	\expandafter\ifx\csname c@#1\endcsname\c@section\else
+	\csname the#1\endcsname\quad
+	\fi}
+\makeatother
+\usepackage{sectsty}
+\sectionfont{\fontsize{17}{20}\selectfont}
+
+
+%Referencias
+%\usepackage[style=authortitle,backend=bibtex]{biblatex}
+%\addbibresource{exercises.bib}
+
+\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
+\definecolor{green(ncs)}{rgb}{0.0, 0.62, 0.42}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\definecolor{limegreen}{rgb}{0.2, 0.8, 0.2}
+\definecolor{palatinateblue}{rgb}{0.15, 0.23, 0.89}
+\definecolor{trueblue}{rgb}{0.0, 0.45, 0.81}
+\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
+\definecolor{fashionfuchsia}{rgb}{0.96, 0.0, 0.63}
+\definecolor{brightcerulean}{rgb}{0.11, 0.67, 0.84}
+\definecolor{jonquil}{rgb}{0.98, 0.85, 0.37}
+\definecolor{lavendermagenta}{rgb}{0.93, 0.51, 0.93}
+\definecolor{peru}{rgb}{0.8, 0.52, 0.25}
+\definecolor{persimmon}{rgb}{0.93, 0.35, 0.0}
+\definecolor{persianred}{rgb}{0.8, 0.2, 0.2}
+\definecolor{persianblue}{rgb}{0.11, 0.22, 0.73}
+\definecolor{persiangreen}{rgb}{0.0, 0.65, 0.58}
+\definecolor{persianyellow}{rgb}{0.9, 0.89, 0.0}
+
+%\theoremstyle{definition}
+
+\declaretheoremstyle[headfont=\color{trueblue}\normalfont\bfseries,]{colored1}
+\declaretheoremstyle[headfont=\color{forestgreen}\normalfont\bfseries,]{colored2}
+\declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored3}
+\declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored4}
+\declaretheoremstyle[headfont=\color{brightcerulean}\normalfont\bfseries,]{colored5}
+\declaretheoremstyle[headfont=\color{lavendermagenta}\normalfont\bfseries,]{colored6}
+\declaretheoremstyle[headfont=\color{blue-violet}\normalfont\bfseries,]{colored7}
+\declaretheoremstyle[headfont=\color{green(ncs)}\normalfont\bfseries,]{colored8}
+\declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored9}
+\declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored10}
+
+\declaretheorem[style=colored1,numberwithin=section,name=Theorem]{thm}
+\declaretheorem[style=colored2,numberwithin=section,numberlike=thm,name=Proposition]{prop}
+\declaretheorem[style=colored3,numberwithin=section,numberlike=thm,name=Lemma]{lemma}
+\declaretheorem[style=colored4,numberwithin=section,numberlike=thm,name=Corollary]{coro}
+\declaretheorem[style=colored5,numbered=no,name=Example]{example}
+\declaretheorem[style=colored5,numbered=no,name=Examples]{exemplos}
+\declaretheorem[style=colored6,numberwithin=section,name=Exercise]{exercise}
+\declaretheorem[style=colored7,numberwithin=section,name=Remark]{remark}
+\declaretheorem[style=colored9,numbered=no,name=Claim]{claim}
+\declaretheorem[style=colored8,numbered=no,name=Definition]{defn}
+\declaretheorem[style=colored10,numbered=no,name=Question]{question}
+
+\numberwithin{equation}{section}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\T}{\mathbb{T}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Qc}{\mathcal{Q}}
+\newcommand{\Sc}{\mathcal{S}}
+\newcommand{\Wc}{\mathcal{W}}
+\newcommand{\mf}{\mathfrak{m}}
+\newcommand{\gf}{\mathfrak{g}}
+\newcommand{\X}{\mathfrak{X}}
+\newcommand{\hf}{\mathfrak{h}}
+\newcommand{\glf}{\mathfrak{gl}}
+\newcommand{\of}{\mathfrak{o}}
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\O}{\operatorname{O}}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\T}{\mathbb{T}}
+\DeclareMathOperator{\Lie}{\operatorname{Lie}}
+
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Alt}{Alt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Top}{Top}
+\DeclareMathOperator{\CGWH}{CGWH}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\VectBund}{VectBund}
+\DeclareMathOperator{\Open}{Open}
+\DeclareMathOperator{\Ring}{Ring}
+\DeclareMathOperator{\Set}{Set}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\M}{M}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+
+
+
+\pagestyle{empty}
+\fancyhf{}
+\cfoot{\thepage}
+\rhead{Daniel González Casanova Azuela}
+\lhead{Complex manifolds in dimension 1}
+\begin{document}
+\fakesection{}
+\section{Home Assignment 2: quadratic forms}
+\thispagestyle{fancy}
+\begin{defn}\leavevmode
+	\begin{itemize}
+		\item Uma aplicação linear $A:V\to V$ é \textbf{\textit{auto-adjunta}} se $\langle Av,w\rangle=\langle v,Aw\rangle$ para todo $v,w\in V$. É fácil comprovar que a matriz de uma aplicação auto-adjunta relativa a uma base ortonormal é simétrica.
+		\item A cada aplicação linear auto-adjunta associamos uma aplicação $B:V\times V\to \R$ definida por
+		\[B(v,w)=\langle Av,w\rangle.\]
+		$B$ é uma forma bilinear e simétrica. Reciprocamente, se $B$ é uma forma bilinear e simétrica em $V$, podemos definir uma aplicação linear $A:V\to V$ por $\langle Av,w\rangle=B(v,w)$. Então $A$ é auto-adjunta.
+		\item Por outro lado, a cada forma bilinear e simétrica em $V$ corresponde uma forma quadrática $Q$ em $V$ dada por
+		\[Q(v)=B(v,v),\qquad v\in V,\]
+		e o conhecimento de $Q$ determina $B$ completamente, pois
+		\[B(u,v)=\frac{1}{2}[Q(u+v)-Q(u)-Q(v)].\]
+		Por fin, estabelecemos uma bijeção entre formas quadráticas em $V$ e aplicações lineares auto-adjuntas de $V$.
+	\end{itemize}
+\end{defn}
+\begin{thm}
+	Dada uma aplicação linear auto-adjunta $A:V\to V$, existe uma base ortonormal de $V$ tal que a matriz de $A$ relativa a esta base é uma matriz diagonal.
+\end{thm}
+\begin{remark}
+	The condition of being self-adjoint corresponds to a symmetric matrix in the real case, and to a Hermitian matrix in the complex case. Recall that a Hermitian matrix defined to be equal to its conjugate transpose, ie. $a_{ij}=\overline{a_{ji}}$. In this course, a \textbf{\textit{Hermitian form}} on a vector space $V$ is a skew-symmetric form and a Riemannian metric $h$ on a manifold $M$ is \textbf{\textit{Hermitian}} if $h(x,y)=h(Ix,Iy)$ for a complex structure $I$ on $M$. Furthermore, complex structures on a 2-manifold are in correspondence with conformal classes of Hermitian metrics.
+\end{remark}
+\begin{thm}[Sylvester's law of inertia]
+	If $A$ is the symmetric matrix that defines a quadratic form and $S$ is any invertible matrix such that $D=SAS^T$ is diagonal, then the number of negative elements in the diagonal of $D$ is always the same, for all such $S$; and the same goes for the number of positive elements.
+\end{thm}
+\begin{defn}
+	Let the number of +1s be denoted by $n_+$ and the number of -1s by $n_-$. The pair $(n_+,n_-)$ is called the \textbf{\textit{signature}} of $A$.
+\end{defn}
+\begin{exercise}
+	Let $q$ be a quadratic form of signature $(1,1)$ on $\R^2$ with integer coefficients. Prove that there is always a non-trivial rational pair $v=(a,b)\in\R^2$ such that $q(v)=0$, or find a counter example.
+\end{exercise}
+\begin{proof}
+	Let $q(x,y)=ax^2+2bxy+cy^2$ with $a,b,c\in\Z$. For the associated matrix $A=\begin{pmatrix}a&b\\b&c\end{pmatrix}$ there exists a nonsingular matrix $S$ such that $S^{-1}AS$ is either of
+	\[\begin{pmatrix}
+		1&0\\
+		0&-1
+	\end{pmatrix}\qquad\qquad\begin{pmatrix}
+	-1&0\\
+	0&1
+	\end{pmatrix}.\]
+	Then, for every vector $v\in\R^2$ with coordinates $(x,y)$ in the new basis,
+	\[q(v)=\begin{pmatrix}
+		x&y
+	\end{pmatrix}\begin{pmatrix}
+		1&0\\
+		0&-1
+	\end{pmatrix}\begin{pmatrix}
+	x\\y
+	\end{pmatrix}=
+	\begin{pmatrix}
+		x&y
+	\end{pmatrix}
+	\begin{pmatrix}
+		x\\-y
+	\end{pmatrix}=x^2-y^2\]
+	or
+	\[q(v)=\begin{pmatrix}
+		x&y
+	\end{pmatrix}\begin{pmatrix}
+		-1&0\\
+		0&1
+	\end{pmatrix}\begin{pmatrix}
+		x\\y
+	\end{pmatrix}=
+	\begin{pmatrix}
+		x&y
+	\end{pmatrix}
+	\begin{pmatrix}
+		-x&y
+	\end{pmatrix}=-x^2+y^2.\]
+	So the solutions of $q(v)=0$ are the lines $x=y$ and $x=-y$. When returning to the original basis, these lines are mapped to two other lines through the origin. Should these new lines have irrational slope, there would be no rational points in them. A necessary condition for this to happen is that $S^{-1}$ maps $(1,1)$ to a scalar multiple of $(1,\alpha)$ for some irrational number $\alpha$. But then at least one of the entries of $S$ would be irrational, and this {\color{magenta}might mean} that $A$ cannot be an integer matrix.
+\end{proof}
+\begin{defn}
+	The group $\O(p,q)$ is the group of linear isometries of the $(p+q)$-dimensional vector space with scalar product of signature $(p,q)$, and $\SO(p,q)\subset\O(p,q)$ is the group of isometries preserving the orientation. We use the notation $\SO^+(p,q)$ for the connected component of $\SO(p,q)$.
+\end{defn}
+\begin{exercise}\label{ex:2.2}
+	Prove that $\O(1,1)$ has 4 connected components, and $\SO(1,1)$ has 2 connected components.
+\end{exercise}
+\begin{exercise}\label{ex:2.3}
+	Prove that $\O(p,q)$ has 4 connected components, when $p,q>0$, and $\SO(1,1)$ has 2 connected components. \textbf{Hint:} use the previous exercise.
+\end{exercise}
+\begin{proof}[Idea of proof of \cref{ex:2.2,ex:2.3}]\leavevmode
+	
+	\textbf{(Step 1)} First we make sure that $\O(n)$ was two connected components for all $n$. Any orthonormal base is mapped to another orthonormal base, so that the columns of any matrix $A\in\O(n)$ are orthonormal. Since the $(i,j)$-entry of the product of $AA^T$, where $T$ denotes transpose, is the scalar product of the $i$-th row with the $j$-th column of $A$, we have that $AA^T=\I$. It follows that
+	\begin{align*}
+		1=\det(\I)=\det(AA^T)\det(A)\det(A^T)=\det(A)^2
+	\end{align*}
+	so
+	\[\det(A)=\pm1.\]
+	Then $\O(n)$ has two connected components because $\det:\O(n)\to\C$ is a continuous function and $\O(n)$ is the preimage of two small open neighbourhoods of $1$ and $-1$.
+	
+	\textbf{(Step 2)} \iffalse Next we claim that if $q(x,y)=x_1y_1-x_2y_2$, a matrix $A$ is in $O(1,1)$ if and only if \[GA^TG=A^{-1}\] where
+	\[G=\begin{pmatrix}
+		1&0\\
+		0&-1
+	\end{pmatrix}.\]\fi
+	(This step is exercise 1.6.1 in B. Hall, \textit{Lie Groups, Lie, Algebras, and Representations}, Second Edition.)
+	For the scalar product of signature $(p,q)$ \[q(x,y)=x_1y_2+\ldots+x_py_p-x_{p+1}y_{p
+	1}-\ldots-x_{p+q}y_{p+q},\]
+	a matrix $A$ is in $O(p,q)$ if and only if \[GA^TG=A^{-1}\] where
+	\[G=\begin{pmatrix}
+		\I_p&0\\
+		0&-\I_q
+	\end{pmatrix}\]
+	and $\I_k$ denotes de $k\times k$ identity matrix.
+	
+	\textbf{(Step 3)} We borrow an answer from \href{https://mathoverflow.net/questions/297985/why-is-onk-not-connected-and-has-four-connected-components?_gl=1*e8aadb*_ga*MjE5NTQwOTAxLjE3MTE3MzY5Njk.*_ga_S812YQPLT2*MTcxMTczNjk2OS4xLjAuMTcxMTczNjk2OS4wLjAuMA..}{StackExchange}:
+	\begin{quote}
+		Since $\O(p,q)$ as characterized is closed under transposes, the group $\O(p,q)\cap\O(p,q)=\O(p)\times\O(q)$ is a maximal compact subgroup of $\O(p,q)$. Therefore, the number of connected components of $\O(p,q)$ is the same as that of $\O(p)\times\O(q)$, and this is $2\times 2=4$.
+	\end{quote}
+	Where the equality $\O(p,q)\cap\O(p,q)=\O(p)\times\O(q)$ holds since
+	\begin{quote}
+		the intersection preserves the quadratic forms with plus and minus signs being a subgroup of $\O(p,q)$ and preserves the quadratic form with only pluses being a subgroup of $\O(p+q)$. Hence it preserves the sum and difference of the quadratic forms and their null spaces, Thus it preserves $\R^p$ and $\R^q$, hence it lies in $\O(p)\times\O(q)$.
+	\end{quote}
+	
+	\textbf{(Step 4)} It remains to show that the result holds for a general scalar product of signature $(p,q)$.
+\end{proof}
+
+\begin{exercise}
+	Let $q$ be a quadratic form of signature $(1,2)$ on $\R^3$ with integral coefficients. Prove that there is always a non-trivial rational triple $u=(a,b,c)\in\R^3$ such that $q(u)=0$, or find a counterexample.
+\end{exercise}
+\begin{proof}
+	content...
+\end{proof}
+\begin{defn}
+	Let $V=\R^3$ be a vector space with quadratic form $q$ of signature $(1,2)$. A line (= 1-dimensional vector subspace) $\ell$ in $V$ is called \textbf{\textit{positive}} if $q(x,x)>0$ for some $x\in\ell$, \textbf{\textit{negative}} if $q(x,x)<0$ for some $x\in\ell$ and \textbf{\textit{isotropic}} if $q(x,x)=0$ for all $x\in\ell$. Let $\alpha\in\SO^+$ be a non-trivial element. It is called \textbf{\textit{elliptic}} if it preserves a positive line $\ell\in V$, \textbf{\textit{hyperbolic}} if it preserves a negative line, and \textbf{\textit{parabolic}} if all lines preserved by $\alpha$ are isotropic.
+\end{defn}
+
+\begin{exercise}
+	Let $q$ be quadratic form of signature $(1,2)$ on $\R^3$ with integral coefficients, $h\in\SO^+(1,2)$ a hyperbolic isometry with integral coefficients, and $P_h(t)$ its characteristic polynomial. Prove that $P_h(t)$ has precisely 1 rational root.
+\end{exercise}
+\begin{proof}[Idea]
+	Let us agree that $\SO^+(1,2)$ is the set of orientation-preserving isometries of $\R^{1,2}$ that fix one of the sheets of some hyperboloid given by $q(x,x)=\pm1$. As such, we call them hyperbolic orientation-preserving isometries and identify $\SO^+(1,2)$ with $\PGL(2,\C)\cong\Aut(\C P^1)$. {\color{magenta} Even if this was right… how to prove that the characteristic polynomial has precisely 1 rational root?}
+\end{proof}
+\begin{exercise}
+	Let $f:\partial\Delta\to\C$ be a continuous function. Prove that $f$ can be extended to a holomorphic function on $\Delta$ or find a counterexample.
+\end{exercise}
+
+
+\end{document}
