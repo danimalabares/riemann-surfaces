@@ -27,7 +27,7 @@
 	shapes,
 	decorations.markings,backgrounds,calc,intersections
 }
-\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}%Links a lugares en el texto
+\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}
 \hypersetup{%colores
 	colorlinks=true,
 	urlcolor=blue,
@@ -95,10 +95,10 @@
 \declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored9}
 \declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored10}
 
-\declaretheorem[style=colored1,numberwithin=section,name=Theorem]{thm}
-\declaretheorem[style=colored2,numberwithin=section,numberlike=thm,name=Proposition]{prop}
-\declaretheorem[style=colored3,numberwithin=section,numberlike=thm,name=Lemma]{lemma}
-\declaretheorem[style=colored4,numberwithin=section,numberlike=thm,name=Corollary]{coro}
+\declaretheorem[style=colored1,numbered=no,name=Theorem]{thm}
+\declaretheorem[style=colored2,numberwithin=section,,name=Proposition]{prop}
+\declaretheorem[style=colored3,numberwithin=section,numberlike=prop,name=Lemma]{lemma}
+\declaretheorem[style=colored4,numberwithin=section,numberlike=prop,name=Corollary]{coro}
 \declaretheorem[style=colored5,numbered=no,name=Example]{example}
 \declaretheorem[style=colored5,numbered=no,name=Examples]{exemplos}
 \declaretheorem[style=colored7,numberwithin=section,name=Exercise]{exercise}
@@ -185,9 +185,9 @@
 			{\small\href{https://github.com/danimalabares/riemann-surfaces}{github.com/danimalabares/riemann-surfaces}}
 		\end{minipage}%
 	\end{minipage}\vspace{.2cm}\hrule
-	\section{Home Assignment 2: quadratic forms}
-	\subsection*{Some facts about quadratic forms}
-	\begin{defn}[M. Do Carmo, \textit{Geometria diferencial de curvas e superfícies}]\leavevmode
+\section{}\vspace{-.5cm}
+\section{Home Assignment 2: quadratic forms}
+\iffalse	\begin{defn}[M. Do Carmo, \textit{Geometria diferencial de curvas e superfícies}]\leavevmode
 		\begin{itemize}
 			\item Uma aplicação linear $A:V\to V$ é \textbf{\textit{auto-adjunta}} se $\langle Av,w\rangle=\langle v,Aw\rangle$ para todo $v,w\in V$. É fácil comprovar que a matriz de uma aplicação auto-adjunta relativa a uma base ortonormal é simétrica.
 			\item A cada aplicação linear auto-adjunta associamos uma aplicação $B:V\times V\to \R$ definida por
@@ -202,21 +202,20 @@
 	\end{defn}
 	\begin{thm}
 		Dada uma aplicação linear auto-adjunta $A:V\to V$, existe uma base ortonormal de $V$ tal que a matriz de $A$ relativa a esta base é uma matriz diagonal.
-	\end{thm}
-	\begin{remark}
-		The condition of being self-adjoint corresponds to a symmetric matrix in the real case, and to a Hermitian matrix in the complex case. Recall that a Hermitian matrix defined to be equal to its conjugate transpose, ie. $a_{ij}=\overline{a_{ji}}$. In this course, a \textbf{\textit{Hermitian form}} on a vector space $V$ is a skew-symmetric form and a Riemannian metric $h$ on a manifold $M$ is \textbf{\textit{Hermitian}} if $h(x,y)=h(Ix,Iy)$ for a complex structure $I$ on $M$. Furthermore, complex structures on a 2-manifold are in correspondence with conformal classes of Hermitian metrics.
-	\end{remark}
+	\end{thm}\fi
+	%\begin{remark}
+		%The condition of being self-adjoint corresponds to a symmetric matrix in the real case, and to a Hermitian matrix in the complex case. Recall that a Hermitian matrix defined to be equal to its conjugate transpose, ie. $a_{ij}=\overline{a_{ji}}$. In this course, a \textbf{\textit{Hermitian form}} on a vector space $V$ is a skew-symmetric form and a Riemannian metric $h$ on a manifold $M$ is \textbf{\textit{Hermitian}} if $h(x,y)=h(Ix,Iy)$ for a complex structure $I$ on $M$. Furthermore, complex structures on a 2-manifold are in correspondence with conformal classes of Hermitian metrics.
+	%\end{remark}
 	\begin{thm}[\href{https://en.wikipedia.org/wiki/Sylvester's_law_of_inertia}{Sylvester's law of inertia}]
 		If $A$ is the symmetric matrix that defines a quadratic form and $S$ is any invertible matrix such that $D=SAS^T$ is diagonal, then the number of negative elements in the diagonal of $D$ is always the same, for all such $S$; and the same goes for the number of positive elements.
 	\end{thm}
 	\begin{defn}
 		Let the number of +1s be denoted by $n_+$ and the number of -1s by $n_-$. The pair $(n_+,n_-)$ is called the \textbf{\textit{signature}} of $A$.
 	\end{defn}
-	\subsection*{Exercises}
 	\begin{exercise}
 		Let $q$ be a quadratic form of signature $(1,1)$ on $\R^2$ with integer coefficients. Prove that there is always a non-trivial rational pair $v=(a,b)\in\R^2$ such that $q(v)=0$, or find a counter example.
 	\end{exercise}
-	\begin{proof}
+	\begin{proof}[Idea of proof]
 		Let $q(x,y)=ax^2+2bxy+cy^2$ with $a,b,c\in\Z$. For the associated matrix $A=\begin{pmatrix}a&b\\b&c\end{pmatrix}$ there exists a nonsingular matrix $S$ such that $S^{-1}AS$ is either of
 		\[\begin{pmatrix}
 			1&0\\
@@ -226,7 +225,7 @@
 			0&1
 		\end{pmatrix}.\]
 		Then, for every vector $v\in\R^2$ with coordinates $(x,y)$ in the new basis,
-		\[q(v)=\begin{pmatrix}
+		\[\tilde q(v)=\begin{pmatrix}
 			x&y
 		\end{pmatrix}\begin{pmatrix}
 			1&0\\
@@ -241,7 +240,7 @@
 			x\\-y
 		\end{pmatrix}=x^2-y^2\]
 		or
-		\[q(v)=\begin{pmatrix}
+		\[\tilde q(v)=\begin{pmatrix}
 			x&y
 		\end{pmatrix}\begin{pmatrix}
 			-1&0\\
@@ -255,7 +254,7 @@
 		\begin{pmatrix}
 			-x&y
 		\end{pmatrix}=-x^2+y^2.\]
-		So the solutions of $q(v)=0$ are the lines $x=y$ and $x=-y$. When returning to the original basis, these lines are mapped to two other lines through the origin. Should these new lines have irrational slope, there would be no rational points in them. A necessary condition for this to happen is that $S^{-1}$ maps $(1,1)$ to a scalar multiple of $(1,\alpha)$ for some irrational number $\alpha$. But then at least one of the entries of $S$ would be irrational, and this {\color{magenta}might mean} that $A$ cannot be an integer matrix.
+		So the solutions of $\tilde q(v)=0$ are the lines $x=y$ and $x=-y$. When returning to the original basis, these lines are mapped to two other lines through the origin. Should these new lines have irrational slope, there would be no rational points in them. A necessary condition for this to happen is that $S^{-1}$ maps $(1,1)$ to a scalar multiple of $(1,\alpha)$ for some irrational number $\alpha$. But then at least one of the entries of $S$ would be irrational, and this {\color{magenta}might mean} that $A$ cannot be an integer matrix.
 	\end{proof}
 	\begin{defn}
 		The group $\O(p,q)$ is the group of linear isometries of the $(p+q)$-dimensional vector space with scalar product of signature $(p,q)$, and $\SO(p,q)\subset\O(p,q)$ is the group of isometries preserving the orientation. We use the notation $\SO^+(p,q)$ for the connected component of $\SO(p,q)$.
@@ -282,6 +281,7 @@
 			0&-1
 		\end{pmatrix}.\]\fi
 		(This is exercise 1.6.1 in B. Hall, \textit{Lie Groups, Lie, Algebras, and Representations: an Elementary Introduction}, Second Edition.)
+		
 		For the scalar product of signature $(p,q)$ \[q(x,y)=x_1y_2+\ldots+x_py_p-x_{p+1}y_{p
 			1}-\ldots-x_{p+q}y_{p+q},\]
 		a matrix $A$ is in $O(p,q)$ if and only if \[GA^TG=A^{-1}\] where
@@ -302,14 +302,13 @@
 		
 		\textbf{(Step 4)} It remains to show that the result holds for a general scalar product of signature $(p,q)$.
 		
-		(This \href{https://en.wikipedia.org/wiki/Indefinite_orthogonal_group#Topology}{Wiki} might also be useful.)
+		%(This \href{https://en.wikipedia.org/wiki/Indefinite_orthogonal_group#Topology}{Wiki} might also be useful.)
 	\end{proof}
 	
 	\begin{exercise}
 		Let $q$ be a quadratic form of signature $(1,2)$ on $\R^3$ with integral coefficients. Prove that there is always a non-trivial rational triple $u=(a,b,c)\in\R^3$ such that $q(u)=0$, or find a counterexample.
 	\end{exercise}
-	\begin{proof}
-		content...
+	\begin{proof}[No proof…]
 	\end{proof}
 	\begin{defn}
 		Let $V=\R^3$ be a vector space with quadratic form $q$ of signature $(1,2)$. A line (= 1-dimensional vector subspace) $\ell$ in $V$ is called \textbf{\textit{positive}} if $q(x,x)>0$ for some $x\in\ell$, \textbf{\textit{negative}} if $q(x,x)<0$ for some $x\in\ell$ and \textbf{\textit{isotropic}} if $q(x,x)=0$ for all $x\in\ell$. Let $\alpha\in\SO^+$ be a non-trivial element. It is called \textbf{\textit{elliptic}} if it preserves a positive line $\ell\in V$, \textbf{\textit{hyperbolic}} if it preserves a negative line, and \textbf{\textit{parabolic}} if all lines preserved by $\alpha$ are isotropic.
@@ -319,11 +318,18 @@
 		Let $q$ be quadratic form of signature $(1,2)$ on $\R^3$ with integral coefficients, $h\in\SO^+(1,2)$ a hyperbolic isometry with integral coefficients, and $P_h(t)$ its characteristic polynomial. Prove that $P_h(t)$ has precisely 1 rational root.
 	\end{exercise}
 	\begin{proof}[Idea]
-		Let us agree that $\SO^+(1,2)$ is the set of orientation-preserving isometries of $\R^{1,2}$ that fix one of the sheets of some hyperboloid given by $q(x,x)=\pm1$. As such, we call them hyperbolic orientation-preserving isometries and identify $\SO^+(1,2)$ with $\PGL(2,\C)\cong\Aut(\C P^1)$. {\color{magenta} Even if this was right… how to prove that the characteristic polynomial has precisely 1 rational root?}
+		Think of $\SO^+(1,2)$ as the set of orientation-preserving isometries of $\R^{1,2}$ that fix one of the sheets of some hyperboloid given by $q(x,x)=\pm1$. We may identify $\SO^+(1,2)$ with $\PGL(2,\C)\cong\Aut(\C P^1)$. {\color{magenta} This might simply $h$ to a $2\times 2$ matrix, but I still couldn't find a rational root.}
 	\end{proof}
 	\begin{exercise}
 		Let $f:\partial\Delta\to\C$ be a continuous function. Prove that $f$ can be extended to a holomorphic function on $\Delta$ or find a counterexample.
 	\end{exercise}
+	\begin{proof}
+		A counter example is the function $f(z)=\frac{1}{z}$. Suppose that $f$ can be extended to a holomorphic function on $\Delta$ and define $g(z)=zf(z)$. Then
+		\begin{align*}
+			0=g(0)=\frac{1}{2\pi\sqrt{-1}}\int_{\partial\Delta}\frac{g(z)}{z}dz=\frac{1}{2\pi \sqrt{-1}}\int_{\partial\Delta}\frac{dz}{z}=1.
+		\end{align*}
+		
+	\end{proof}
 	
 	
 \end{document}

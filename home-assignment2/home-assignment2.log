@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  29 MAR 2024 20:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  1 APR 2024 16:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -953,7 +953,7 @@ LaTeX Warning: Command \underline  has changed.
                Check if current package is valid.
 
 )
-\c@thm=\count328
+\c@prop=\count328
 \c@exercise=\count329
 \c@remark=\count330
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
@@ -1075,52 +1075,52 @@ LaTeX Font Info:    Trying to load font information for U+zeuex on input line 1
 (/usr/local/texlive/2023/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
-ine 190.
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 1
-92.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
-File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input li
-ne 204.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 207.
- [1
+ne 209.
+
+Overfull \hbox (0.4328pt too wide) in paragraph at lines 210--211
+[][]\OT1/ppl/b/n/10 Theorem \OT1/ppl/m/n/10 ([][]Sylvester's law of in-er-tia[]
+[])\OT1/ppl/b/n/10 . [][]\OT1/ppl/m/n/10 If $\U/zeur/m/n/10 A$ \OT1/ppl/m/n/10 
+is the sym-met-ric ma-trix that de-fines a quadratic
+ []
+
+Package hyperref Info: bookmark level for unknown defn defaults to 0 on input l
+ine 213.
+Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
+ut line 216.
+[1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-Package hyperref Info: bookmark level for unknown exercise defaults to 0 on inp
-ut line 217.
- [2] [3] [4] (./home-assignment2.aux)
+al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3]
+(./home-assignment2.aux)
 Package rerunfilecheck Info: File `home-assignment2.out' has not changed.
-(rerunfilecheck)             Checksum: 9C1D9FB97E772312B4B6BD5E4AF11399;224.
+(rerunfilecheck)             Checksum: A36B73CC529EA0435C5BCDC31BA0F647;258.
  ) 
 Here is how much of TeX's memory you used:
- 30401 strings out of 476025
- 619946 string characters out of 5790018
- 1866388 words of memory out of 5000000
- 50283 multiletter control sequences out of 15000+600000
- 529196 words of font info for 78 fonts, out of 8000000 for 9000
+ 30344 strings out of 476025
+ 619051 string characters out of 5790018
+ 1872388 words of memory out of 5000000
+ 50240 multiletter control sequences out of 15000+600000
+ 527226 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,8n,85p,1205b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,85p,1205b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pf
-b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.p
-fb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pf
+b></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.
+pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7
 .pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eurm
-7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eus
-m10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols
-/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a
-.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb><
-/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/lo
-cal/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on home-assignment2.pdf (4 pages, 126476 bytes).
+10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eu
+rm7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/e
+usm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb
+8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on home-assignment2.pdf (3 pages, 122815 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 124 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
+ 29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
