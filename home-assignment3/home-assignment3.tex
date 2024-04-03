@@ -194,10 +194,13 @@
 \begin{exercise}
 	Prove that $\SL(n,\R)$ is a Lie group. Prove that it is connected.
 \end{exercise}
-\begin{proof}
-	Recall that $\SL(n,\R)$ is the subgroup of $\GL(n,\R)$ of matrices with determinant $1$, so it is the preimage of $\{1\}$ under the smooth function $\det:\GL(n,\R)\to\R$. In fact, $1$ is a regular value of $\det$ because $\det$ is surjective and of constant rank $\equiv1$, making $\SL(n,\R)$ a submanifold. (Of course, $\GL(n,\R)$ is a submanifold of $\R^{2n}=\M(n,\R)$ because it is an open subset, namely, the preimage of $\R\backslash0$ under the continuous function $\det$.)
+\begin{proof}\leavevmode
+	
+	\textbf{($\SL(n,\R)$ is a Lie group.)} Recall that $\SL(n,\R)$ is the subgroup of $\GL(n,\R)$ of matrices with determinant $1$, so it is the preimage of $\{1\}$ under the smooth function $\det:\GL(n,\R)\to\R$. In fact, $1$ is a regular value of $\det$ because $\det$ is surjective and of constant rank $\equiv1$, making $\SL(n,\R)$ a submanifold. (Of course, $\GL(n,\R)$ is a submanifold of $\R^{2n}=\M(n,\R)$ because it is an open subset, namely, the preimage of $\R\backslash0$ under the continuous function $\det$.)
 	
 	Moreover, we may think of $\det$ as a group homomorphism from $\GL(n,\R)$ to the multiplicative group $\R\backslash0$, so that $\SL(n,\R)=\ker\det$, making it a subgroup. The restriction of the group operations from $\GL(n,\R)$ are smooth, making $\SL(n,\R)$ a Lie group.
+	
+	\textbf{($\SL(n,\R)$ is connected.)}
 \end{proof}
 
 \begin{exercise}
@@ -211,7 +214,7 @@
 	
 	\textbf{(Find $\St_x(\SU(n))$.)} By the arguments above it can only be the cyclic group of two elements.
 	
-	\textbf{(Is $\SU(n)$ connected?)}
+	\textbf{(Is $\SU(n)$ connected?)} No, I claim that the identity component and 
 \end{proof}
 
 \begin{defn}

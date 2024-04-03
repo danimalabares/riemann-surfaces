@@ -305,10 +305,33 @@
 		%(This \href{https://en.wikipedia.org/wiki/Indefinite_orthogonal_group#Topology}{Wiki} might also be useful.)
 	\end{proof}
 	
+	\begin{proof}[Of \cref{ex:2.2} by Lada]
+		Choose two vectors $a$, $b$ such that
+		\[q(Ua,Ub)=q(a,b)=1\]
+		and
+		\begin{align*}
+			q(a)=b\qquad q(a)=-a\\
+			q(b)=a\qquad q(b)=-b
+		\end{align*}
+		for $U\in\SO(1,1)$. The point is that given the choise, all $\lambda\in\R^{>0}$ will do, so that the connected component is a line. The four choices are just signs and orientations.
+	\end{proof}
+	
+	\begin{proof}[Idea for \cref{ex:2.3} by Vanya]
+		Consider the fibration
+		\[\begin{tikzcd}
+			\O(p-1,q)\arrow[r]&\O(p,q)\arrow[r]&B=S^{q-1}
+		\end{tikzcd}\]
+		since hyperboloid retracts to a sphere. We obtain
+		\[\begin{tikzcd}
+			\pi_1(S^{q-1})\arrow[r]&\pi_0(\O(p-1,q))\arrow[r]&\pi_0(S^{q-1})
+		\end{tikzcd}\]
+	\end{proof}
+	
 	\begin{exercise}
 		Let $q$ be a quadratic form of signature $(1,2)$ on $\R^3$ with integral coefficients. Prove that there is always a non-trivial rational triple $u=(a,b,c)\in\R^3$ such that $q(u)=0$, or find a counterexample.
 	\end{exercise}
-	\begin{proof}[No proof…]
+	\begin{proof}[Proof by Vanya]
+		\[q(a,b,c)=3a^2-b^2-c^2\]
 	\end{proof}
 	\begin{defn}
 		Let $V=\R^3$ be a vector space with quadratic form $q$ of signature $(1,2)$. A line (= 1-dimensional vector subspace) $\ell$ in $V$ is called \textbf{\textit{positive}} if $q(x,x)>0$ for some $x\in\ell$, \textbf{\textit{negative}} if $q(x,x)<0$ for some $x\in\ell$ and \textbf{\textit{isotropic}} if $q(x,x)=0$ for all $x\in\ell$. Let $\alpha\in\SO^+$ be a non-trivial element. It is called \textbf{\textit{elliptic}} if it preserves a positive line $\ell\in V$, \textbf{\textit{hyperbolic}} if it preserves a negative line, and \textbf{\textit{parabolic}} if all lines preserved by $\alpha$ are isotropic.
