@@ -1,33 +1,28 @@
 \documentclass{article}
 \usepackage{titlesec}
 
-%Paquetes
+\usepackage[citestyle=authortitle-terse,backend=bibtex]{biblatex}
+\addbibresource{bibliography.bib}
+
+\setcounter{secnumdepth}{0}
+\usepackage{sectsty}
+\sectionfont{\fontsize{17}{20}\selectfont}
+
 \usepackage[left=4cm, right=4cm]{geometry}
-\usepackage{afterpage}
-\usepackage{palatino}%Fuente
- \usepackage{eulervm}%Fuente
-\usepackage{graphicx}%Imágenes
-\usepackage{float}%Imágenes
-\usepackage{subcaption}%Imágenes
-\usepackage{enumitem}%Listas
-\usepackage{parskip}%Espacio entre párrafos
-\usepackage{multicol}
-\usepackage{amsthm,thmtools,xcolor}
-\usepackage{amssymb}%Mate
-\usepackage{amsmath}%Mate
-\usepackage{tikz}%Mate (diagramas)
-\usepackage{dutchcal}
-\usepackage{tikz-cd}
-\usepackage{xcolor}
-\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\usepackage{palatino,eulervm,dutchcal,xcolor}%fonts
+\usepackage{graphicx,subcaption,float}
+\usepackage{enumitem,parskip,multicol}
+\usepackage{amsthm,amssymb,amsmath,mathtools,thmtools}
+\usepackage{tikz,tikz-cd}
 \usetikzlibrary{%
 	matrix,%
 	calc,%
 	arrows,%
 	shapes,
-	decorations.markings,backgrounds,calc,intersections
-}
-\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}%Links a lugares en el texto
+	decorations.markings,backgrounds,calc,intersections}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+		cells={nodes={scale=#1}}}}
+\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}
 \hypersetup{%colores
 	colorlinks=true,
 	urlcolor=blue,
@@ -37,8 +32,7 @@
 	urlbordercolor=white,
 	linkbordercolor=white,
 	citebordercolor=white,
-	filebordercolor=white
-}
+	filebordercolor=white}
 \usepackage{cleveref}
 \Crefname{exercise}{Exercise}{Exercises}
 
@@ -55,13 +49,6 @@
 	\csname the#1\endcsname\quad
 	\fi}
 \makeatother
-\usepackage{sectsty}
-\sectionfont{\fontsize{17}{20}\selectfont}
-
-
-%Referencias
-%\usepackage[style=authortitle,backend=bibtex]{biblatex}
-%\addbibresource{exercises.bib}
 
 \definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
 \definecolor{azure}{rgb}{0.0, 0.5, 1.0}
@@ -82,8 +69,6 @@
 \definecolor{persiangreen}{rgb}{0.0, 0.65, 0.58}
 \definecolor{persianyellow}{rgb}{0.9, 0.89, 0.0}
 
-%\theoremstyle{definition}
-
 \declaretheoremstyle[headfont=\color{trueblue}\normalfont\bfseries,]{colored1}
 \declaretheoremstyle[headfont=\color{forestgreen}\normalfont\bfseries,]{colored2}
 \declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored3}
@@ -102,12 +87,10 @@
 \declaretheorem[style=colored5,numbered=no,name=Example]{example}
 \declaretheorem[style=colored5,numbered=no,name=Examples]{exemplos}
 \declaretheorem[style=colored7,numberwithin=section,name=Exercise]{exercise}
-\declaretheorem[style=colored9,numberwithin=section,name=Remark]{remark}
+\declaretheorem[style=colored9,numbered=no,name=Remark]{remark}
 \declaretheorem[style=colored9,numbered=no,name=Claim]{claim}
 \declaretheorem[style=colored8,numbered=no,name=Definition]{defn}
 \declaretheorem[style=colored10,numbered=no,name=Question]{question}
-
-\numberwithin{equation}{section}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -147,6 +130,7 @@
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\I}{I}
 \DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Alt}{Alt}
 \DeclareMathOperator{\sgn}{sgn}
 \DeclareMathOperator{\supp}{supp}
@@ -196,29 +180,58 @@
 \end{exercise}
 \begin{proof}\leavevmode
 	
-	\textbf{($\SL(n,\R)$ is a Lie group.)} Recall that $\SL(n,\R)$ is the subgroup of $\GL(n,\R)$ of matrices with determinant $1$, so it is the preimage of $\{1\}$ under the smooth function $\det:\GL(n,\R)\to\R$. In fact, $1$ is a regular value of $\det$ because $\det$ is surjective and of constant rank $\equiv1$, making $\SL(n,\R)$ a submanifold. (Of course, $\GL(n,\R)$ is a submanifold of $\R^{2n}=\M(n,\R)$ because it is an open subset, namely, the preimage of $\R\backslash0$ under the continuous function $\det$.)
+	\textbf{($\SL(n,\R)$ is a Lie group.)} (Idea from \cite{lee}) Since $\SL(n,\R)$ is the subgroup of $\GL(n,\R)$ of matrices with determinant $1$, it is the preimage of $\{1\}$ under the smooth function $\det:\GL(n,\R)\to\R$. In fact, $1$ is a regular value of $\det$ because $\det$ is surjective and of constant rank $\equiv1$, making $\SL(n,\R)$ a submanifold. (Of course, $\GL(n,\R)$ is a submanifold of $\R^{2n}=\M(n,\R)$ because it is an open subset, namely, the preimage of $\R\backslash0$ under the continuous function $\det$.)
 	
 	Moreover, we may think of $\det$ as a group homomorphism from $\GL(n,\R)$ to the multiplicative group $\R\backslash0$, so that $\SL(n,\R)=\ker\det$, making it a subgroup. The restriction of the group operations from $\GL(n,\R)$ are smooth, making $\SL(n,\R)$ a Lie group.
 	
-	\textbf{($\SL(n,\R)$ is connected.)}
+	\textbf{($\SL(n,\R)$ is connected.)} (Idea from \href{https://math.stackexchange.com/questions/4774964/prove-that-operatornamesln-bbb-r-is-connected-using-the-decomposition}{StackExchange}) We have seen in our lectures that for any vector space $V$ we have $\SL(V)=e^{\End_0(V)}$ where $\End_0(V)$ denotes the space of matrices with trace 0. We may show that $\SL(n,\R)$ is path-connected by taking any matrix $e^{X}\in\SL(n,\R)$ with $X\in\End_0(\R^n)$ and connecting it to the identity element by the path $e^{tX}$.
 \end{proof}
 
-\begin{exercise}
+\begin{exercise}\label{ex:3.2}
 	Prove that the special unitary group $\SU(n)$ acts transitively on the projective space $\C P^{n-1}$. Find the stabilizer $\St_x(\SU(n))$ of a point $x \in \C P^{n-1}$. Prove that it is connected, or find a counterexample.
 \end{exercise}
 \begin{proof}\leavevmode
 
-	\textbf{($\SU(n)$ acts transitevly on $\C P^{n-1}$.)} Any point in $\C P^{n-1}$ has two representants in the set of points of $\C^n$ of norm 1. Indeed, suppose $x=z_1:\ldots:z_n$ is a point of $\C P^{n-1}$. Since not all coordinates are zero, we may normalize dividing by $\sqrt{z^2_1+\ldots+z^2_n}$. But of course the point $(-z_1,\ldots,-z_n)\in\C^n$ is also a representant of $x$ that has norm 1.
+	\textbf{($\SU(n)$ acts transitevly on $\C P^{n-1}$.)} Any point in $\C P^{n-1}$ has a whole circle of representants in the unit sphere $S^{2n-1}\subset \C^n$. Indeed, suppose $x=z_1:\ldots:z_n$ is a point of $\C P^{n-1}$. Since not all coordinates are zero, we may normalize dividing by $\sqrt{z^2_1+\ldots+z^2_n}$, or perhaps by $h(x,x)$. Then for every $\lambda\in S^1$, the point $\lambda(z_1,\ldots,z_n)\in\C^n$ is also a representant of $x$ in $S^{2n-1}$.
 	
-	Anyway, a matrix $U\in\SU(n)$ not only will preserve the set of points of norm 1, but act transitively on them. This follows from Gram-Schmidt orthogonalization process and from \href{https://en.wikipedia.org/wiki/Hadamard%27s_inequality}{Hadamard's inequality}. The latter says that the determinant of a matrix equals the product of the column vectors if they are orthogonal.
+	Anyway, a matrix $U\in\SU(n)$ not only will preserve $S^{2n-1}$, but will act transitively on it. This follows from Gram-Schmidt orthogonalization process and from \href{https://en.wikipedia.org/wiki/Hadamard%27s_inequality}{Hadamard's inequality}. The latter says that the determinant of a matrix equals the product of the column vectors if they are orthogonal.
 	
-	\textbf{(Find $\St_x(\SU(n))$.)} By the arguments above it can only be the cyclic group of two elements.
+	Explicitly, we proceed as follows. Any point on the sphere may be extended to an othonormal basis, which is equivalent to a matrix in $\SU(n)$ by Hadamard's inequality. Given any two points on the sphere, the composition of their correponding matrices (using the inverse of one of them) takes one point to another. Transitivity on $S^{2n-1}$ implies transitivity on $\C P^n$.
 	
-	\textbf{(Is $\SU(n)$ connected?)} No, I claim that the identity component and 
+	\textbf{(Find $\St_x(\SU(n))$.)} Consider any representant $z\in S^{2n-1}$ of $x\in\C P^{n-1}$. Elements in $\SU(n)$ that fix $z$ will of course fix $x$. And for each of them, multiplying by $\lambda\in S^{1}$ will yield another operator that fixes $z$ as well.
+	
+	Now the elements in $\SU(n)$ that fix $z$ can be identified with $\SU(n-1)$. This can be easily seen for the particular case of a simple vector such as $v=(1,0,\ldots,0)$ noticing that the unitary matrices that fix it must have $v$ as a vector in their first column and row, leaving the remaining $n-1$ entries corresponding to a matrix in $\SU(n-1)$. Up to a change of coordinates, this is true for any point in $S^{2n-1}$.
+	%\href{https://math.stackexchange.com/questions/3592501/show-that-the-orthogonal-group-acts-transitively-on-the-sphere-sn}{this argument}
+	
+	We conclude that $\St_x(\SU(n))=\SU(n-1)\otimes S^1$.
+	
+	\textbf{($\SU(n)$ is connected.)} (Proof from \cite{hall}, prop. 1.13) Any matrix in $U\in\SU(n)$ can be diagonalized with eigenvalues of norm 1. This just means that $U=U_1DU_1^{-1}$ for $U_1\in\SU(n)$ and $D$ diagonal. Now consider
+	\[D(t)=\begin{pmatrix}
+		e^{\sqrt{-1}(1-t)\theta_1}&&0\\
+		&\ddots&\\
+		0&&e^{\sqrt{-1}(1-t)\theta_n}
+	\end{pmatrix}\]
+	Then the path $U(t)=U_1D(t)U_1^{-1}$ connects $U$ and $\Id$ as $t$ moves from 1 to 0. To make sure the path stays within $\SL(n)$ we redefine the last entry to be the inverse of the product of the first $n-1$ entries. This proves that $\SU(n)$ is connected.
+	
+ 	(Proof using theory of homogeneous spaces.) We have seen in our lectures that a transitive action of a Lie group $G$ on a manifold $M$ yields $M=G/St_x(G)$. If my stabilizer is correct, then we have that $\C P^{n-1}=\SU(n)/(\SU(n-1)\otimes S^1)$. {\color{red}It certainly would be nice to conclude this reasoning since its probably the intention of the exercise… haha!)}
+	
+	\iffalse In fact, there is a fiber bundle associated to the action on $S^{2n-1}$:
+	\[\begin{tikzcd}
+		\SU(n-1)\arrow[r,hook]&\SU(n)\arrow[r]&S^{2n-1}
+	\end{tikzcd}\]
+	
+	\begin{remark}
+		Such a fiber bundle is of the form
+		\[\begin{tikzcd}
+			\text{stabilizer}\arrow[r,hook]&\SU(n)\arrow[r]&\text{orbit}.
+		\end{tikzcd}\]
+		I have found a proof that this is in fact a fiber bundle in \cite{hall}, prop. 13.8, stated as follows. If $G$ is a matrix Lie group and $H$ is a closed subgroup, then $G$ has the structure of a fiber bundle with base $G/H$ and fiber $H$. See also prop. 13.11 for the case $\SU(n)$.
+	\end{remark}
+	\fi
 \end{proof}
 
 \begin{defn}
-	Let $W$ be an $n$-dimensional complex vector space equipped with a complex-linear non-degenerate quadratic form $s$. Consider the \textbf{\textit{complex orthogonal group}} $\O(n,\C)$ of all matrices $A \in \GL(W )$ preserving $s$. A subspace $V \subset W$ is called \textbf{\textit{isotropic}} if $s|_W = 0$. It is called \textbf{\textit{maximally isotropic}}, or \textbf{\textit{Lagrangian}}, if $\dim V = [n/2]$.
+	Let $W$ be an $n$-dimensional complex vector space equipped with a complex-linear non-degenerate quadratic form $s$. Consider the \textbf{\textit{complex orthogonal group}} $\O(n,\C)$ of all matrices $A \in \GL(W )$ preserving $s$. A subspace $V \subset W$ is called \textbf{\textit{isotropic}} if $s|_V = 0$. It is called \textbf{\textit{maximally isotropic}}, or \textbf{\textit{Lagrangian}}, if $\dim V = [n/2]$.
 \end{defn}
 
 \begin{exercise}
@@ -226,6 +239,33 @@
 	which has index 2 in $\O(n, \C)$. Prove that it is connected.
 \end{exercise}
 \begin{proof}
-	content...
+	We know  that $\SO(n,\C)$ is a Lie group from our lectures. Now the function $\det:\O(n,\C)\to\{\pm1\}=\Z/2$ is a surjective group homomorphism with kernel $\SO(n,\C)$, meaning $[\O(n,\C):\SO(n,\C)]=|\Z/2|=2$.
+	
+	Any complex-linear quadratic form is associated to a hermitian form, which in turn means we can diagonalize any matrix in $\SO(n,\C)$ and construct a path to the identity matrix just as in the previous exercise. {\color{red}Or maybe use some homogeneous spaces/quotient again?}
 \end{proof}
+
+\begin{exercise}
+	Let $X$ be the space of all maximally isotropic subspaces in $W$ (the \textbf{\textit{maximally isotropic Grassmanian}}).
+	\begin{enumerate}[label*=(\alph*)]
+		\item Prove that $\O(n,\C)$ acts on $X$ transitively.
+		\item Prove that $X$ is disconnected for $n=2,3$.
+		\item Prove that it is connected for $n\geq4$, or find a counterexample.
+	\end{enumerate}
+\end{exercise}
+
+\begin{proof}\leavevmode
+	\begin{enumerate}[label*=(\alph*)]
+		\item {\color{red}Coro. 1.4.27 in \href{https://www.maths.ed.ac.uk/~v1ranick/papers/picctausk.pdf}{here} might help}
+		\item \textbf{(First attempt)} An interesting example (\cite{hatcher}, 4.53) of a fiber bundle is $S^1\to S^{2n+1}\to\C P^n$, given by the map that sends a point to its equivalence class and, as noted in \cref{ex:3.2}, has fiber $S^1$. Surprisingly, this is the case $n=1$ for the more general fiber bundle $\U(n)\to V_n(\C^k)\to G_n(C^k)$ where $V_n(\C^k)$ is the space of $n$-tuples of orthonormal vectors in $\C^k$ and $G_n(C^k)$ is the space of $n$-subspaces in $\C^k$. The arrow in the right assigns to a $n$-tuple the vector space it generates, so the fiber is given by all the orthonormal $n$-tuples that generate any given linear space, which is precisely the group of $\U(n)$ by the Gram-Schmidt process.
+
+		Unfortunately, our space $X$ cannot correspond to an $n$-tuple of $s$-orthonormal vectors since every $n$-tuple that generates a given vector space $V$ in $X$ will vanish under $s$.
+		
+		\textbf{(Second attempt)} In search for an alternative approach, I have found in \href{https://en.wikipedia.org/wiki/Lagrangian_Grassmannian#As_a_homogeneous_space}{Wikipedia} that the Lagrangian Grassmanian of a symplectic vector space is identified with $\U(n)/\O(n)$.
+		
+		{\color{red}Given the transitive action from item (a), it's enough to find the stabilizer of the action to obtain a quotient $\O(n,\C)/\St_x=X$. Then prove such a quotient is connected for the required $n$.}
+
+	\end{enumerate}
+\end{proof}
+
+\printbibliography
 \end{document}
