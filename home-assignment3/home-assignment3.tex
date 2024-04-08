@@ -205,7 +205,9 @@
 	
 	We conclude that $\St_x(\SU(n))=\SU(n-1)\otimes S^1$.
 	
-	\textbf{($\SU(n)$ is connected.)} (Proof from \cite{hall}, prop. 1.13) Any matrix in $U\in\SU(n)$ can be diagonalized with eigenvalues of norm 1. This just means that $U=U_1DU_1^{-1}$ for $U_1\in\SU(n)$ and $D$ diagonal. Now consider
+	\textbf{($\SU(n)$ is connected.)} I have found two proofs:
+	
+	\textbf{(Proof from \cite{hall}, prop. 1.13)} Any matrix in $U\in\SU(n)$ can be diagonalized with eigenvalues of norm 1. This just means that $U=U_1DU_1^{-1}$ for $U_1\in\SU(n)$ and $D$ diagonal. Now consider
 	\[D(t)=\begin{pmatrix}
 		e^{\sqrt{-1}(1-t)\theta_1}&&0\\
 		&\ddots&\\
@@ -213,21 +215,21 @@
 	\end{pmatrix}\]
 	Then the path $U(t)=U_1D(t)U_1^{-1}$ connects $U$ and $\Id$ as $t$ moves from 1 to 0. To make sure the path stays within $\SL(n)$ we redefine the last entry to be the inverse of the product of the first $n-1$ entries. This proves that $\SU(n)$ is connected.
 	
- 	(Proof using theory of homogeneous spaces.) We have seen in our lectures that a transitive action of a Lie group $G$ on a manifold $M$ yields $M=G/St_x(G)$. If my stabilizer is correct, then we have that $\C P^{n-1}=\SU(n)/(\SU(n-1)\otimes S^1)$. {\color{red}It certainly would be nice to conclude this reasoning since its probably the intention of the exercise… haha!)}
-	
-	\iffalse In fact, there is a fiber bundle associated to the action on $S^{2n-1}$:
-	\[\begin{tikzcd}
-		\SU(n-1)\arrow[r,hook]&\SU(n)\arrow[r]&S^{2n-1}
-	\end{tikzcd}\]
-	
-	\begin{remark}
-		Such a fiber bundle is of the form
-		\[\begin{tikzcd}
-			\text{stabilizer}\arrow[r,hook]&\SU(n)\arrow[r]&\text{orbit}.
-		\end{tikzcd}\]
-		I have found a proof that this is in fact a fiber bundle in \cite{hall}, prop. 13.8, stated as follows. If $G$ is a matrix Lie group and $H$ is a closed subgroup, then $G$ has the structure of a fiber bundle with base $G/H$ and fiber $H$. See also prop. 13.11 for the case $\SU(n)$.
-	\end{remark}
-	\fi
+ 	\textbf{(Proof using homogeneous spaces.)} We have seen in our lectures that a transitive action of a Lie group $G$ on a manifold $M$ yields $M=G/St_x(G)$. Then we have that $\C P^{n-1}=\SU(n)/(\SU(n-1)\otimes S^1)$.
+ 	
+ 	Another way to put this is in the form of a fiber bundle
+ 	\[\begin{tikzcd}
+ 		\SU(n-1)\otimes S^1\arrow[r]&\SU(n)\arrow[r]&\C P^{n-1}
+ 	\end{tikzcd}\]
+ 	which in turn yields
+ 	\[\begin{tikzcd}[row sep=tiny]
+ 		\pi_0(\SU(n-1)\otimes S^1)\arrow[r]&\pi_0(\SU(n))\arrow[r]&0.
+ 	\end{tikzcd}\]
+ 	\iffalse and
+	\[\begin{tikzcd}[row sep=tiny]
+ 		\pi_1(\SU(n-1)\otimes S^1)\arrow[r]&\pi_1(\SU(n))\arrow[r]&\pi_1(\C P^{n-1})=0.
+ 	\end{tikzcd}\]\fi
+ 	The final ingredient was found in \cite{piccione}, example 3.2.25: do induction on $n$. Since $\SU(1)=0$, then $\SU(n-1)\otimes S^1$ is connected for all $n>1$ and so is $\SU(n)$.
 \end{proof}
 
 \begin{defn}
@@ -241,7 +243,17 @@
 \begin{proof}
 	We know  that $\SO(n,\C)$ is a Lie group from our lectures. Now the function $\det:\O(n,\C)\to\{\pm1\}=\Z/2$ is a surjective group homomorphism with kernel $\SO(n,\C)$, meaning $[\O(n,\C):\SO(n,\C)]=|\Z/2|=2$.
 	
-	Any complex-linear quadratic form is associated to a hermitian form, which in turn means we can diagonalize any matrix in $\SO(n,\C)$ and construct a path to the identity matrix just as in the previous exercise. {\color{red}Or maybe use some homogeneous spaces/quotient again?}
+	This yields a fibration
+	\[\begin{tikzcd}
+		\SO(n,\C)\arrow[r]&\O(n,\C)\arrow[r]&\{\pm1\}
+	\end{tikzcd}\]
+	yielding
+	\[\begin{tikzcd}
+		\pi_0(\SO(n,\C))\arrow[r]&\pi_0(O(n,\C))\arrow[r]&\pi_0(\{\pm1\})
+	\end{tikzcd}\]
+	and since both $\O(n,\C)$ and $\{\pm1\}$ have two connected components, we have the arrow on the right is an isomorphism and thus $\SO(n,\C)=0$ by exactness of the sequence.
+	
+	\textbf{(Alternative approach following \cite{hall})} The complex-linear quadratic form $s$ is associated to a symmetric bilinear form, which means we can diagonalize any matrix in $\SO(n,\C)$ with eigenvalues of norm 1 and construct a path to the identity matrix just as in the previous exercise.
 \end{proof}
 
 \begin{exercise}
@@ -255,14 +267,24 @@
 
 \begin{proof}\leavevmode
 	\begin{enumerate}[label*=(\alph*)]
-		\item {\color{red}Coro. 1.4.27 in \href{https://www.maths.ed.ac.uk/~v1ranick/papers/picctausk.pdf}{here} might help}
-		\item \textbf{(First attempt)} An interesting example (\cite{hatcher}, 4.53) of a fiber bundle is $S^1\to S^{2n+1}\to\C P^n$, given by the map that sends a point to its equivalence class and, as noted in \cref{ex:3.2}, has fiber $S^1$. Surprisingly, this is the case $n=1$ for the more general fiber bundle $\U(n)\to V_n(\C^k)\to G_n(C^k)$ where $V_n(\C^k)$ is the space of $n$-tuples of orthonormal vectors in $\C^k$ and $G_n(C^k)$ is the space of $n$-subspaces in $\C^k$. The arrow in the right assigns to a $n$-tuple the vector space it generates, so the fiber is given by all the orthonormal $n$-tuples that generate any given linear space, which is precisely the group of $\U(n)$ by the Gram-Schmidt process.
+		\item Consider the associated symmetric bilinear form $g$ of $s$. It is a Riemannian structure on $V$. We also have the complex structure on $V$ given by $I(v)=\sqrt{-1}v$. As we have seen in our lectures, together they yield a hermitian metric $h=g+I(g)$ with $I(g)(x,y)=g(Ix,Iy)$. Also, we have a skew-symmetric form $\omega$ given by $\omega(x,y):=h(x,Iy)$.
+		
+		{\color{red}The idea here is to decompose the Hermitian metric into a sum of the Riemannian metric and the skew-symmetric form. I expected to confirm the following equation:}
+		\[{\color{red}h=g-\sqrt{-1}\omega,}\]
+		{\color{red}as found in \cite{piccione} eq. 1.4.10.}
+		Now consider two Lagragian Grassmanians $L_1,L_2\in X$ and fix orthonormal bases $(b_j)_{j=1}^n$ and $(b'_j)_{j=1}^n$ with respect to $\omega$. Since both spaces are isotropic, the restriction of $h$ to either of them becomes $\sqrt{-1}\omega$ and thus these bases are $h$-orthonormal. Then we use transitivity of hermitian forms on bases.
+		\item[(b, c)] \iffalse An interesting example (\cite{hatcher}, 4.53) of a fiber bundle is $S^1\to S^{2n+1}\to\C P^n$, given by the map that sends a point to its equivalence class and, as noted in \cref{ex:3.2}, has fiber $S^1$. Surprisingly, this is the case $n=1$ for the more general fiber bundle $\U(n)\to V_n(\C^k)\to G_n(\C^k)$ where $V_n(\C^k)$ is the space of $n$-tuples of orthonormal vectors in $\C^k$ and $G_n(\C^k)$ is the space of $n$-subspaces in $\C^k$. The arrow in the right assigns to a $n$-tuple the vector space it generates, so the fiber is given by all the orthonormal $n$-tuples that generate any given linear space, which is precisely the group of $\U(n)$ by the Gram-Schmidt process.\fi
+		
+		If the previous exercise is correct, the stabilizer $\St_A$ of every maximally isotopric subspace $V\in X$ is the group of matrices that preserve the skew-symmetric form $\omega$, that is, the symplectic group $\Sp([n/2],\C)$. We have a fiber bundle
+		\[\begin{tikzcd}
+			\Sp([n/2],\C)\arrow[r]&\O(n,\C)\arrow[r]&X(n)
+		\end{tikzcd}\]
+		where $X(n)$ is just $X$ for dimension $n$. This gives
+			\[\begin{tikzcd}[row sep=tiny]
+			\pi_0(\Sp([n/2],\C)\arrow[r]&\pi_0(\O(n,\C))\arrow[r]&\pi_0(X(n))\arrow[r]&0.
+		\end{tikzcd}\]
+		Since the symplectic group is connected for all $n$ (\cite{piccione} example 3.2.25), we get $\pi_0(X(n))=\pi_0(\O(n,\C))$ for all $n$, meaning $X(n)$ has two connected components for all $n$.
 
-		Unfortunately, our space $X$ cannot correspond to an $n$-tuple of $s$-orthonormal vectors since every $n$-tuple that generates a given vector space $V$ in $X$ will vanish under $s$.
-		
-		\textbf{(Second attempt)} In search for an alternative approach, I have found in \href{https://en.wikipedia.org/wiki/Lagrangian_Grassmannian#As_a_homogeneous_space}{Wikipedia} that the Lagrangian Grassmanian of a symplectic vector space is identified with $\U(n)/\O(n)$.
-		
-		{\color{red}Given the transitive action from item (a), it's enough to find the stabilizer of the action to obtain a quotient $\O(n,\C)/\St_x=X$. Then prove such a quotient is connected for the required $n$.}
 
 	\end{enumerate}
 \end{proof}

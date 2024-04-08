@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  6 APR 2024 17:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.1)  8 APR 2024 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1378,18 +1378,13 @@ ut line 179.
  [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
-al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-Overfull \hbox (4.26257pt too wide) in paragraph at lines 244--245
-\OT1/ppl/m/n/10 ma-trix just as in the pre-vi-ous ex-er-cise. []Or maybe use so
-me ho-mo-ge-neous spaces/quotient
- []
-
-[2]
+al/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2] [3]
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-70.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+92.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3]
+) [4]
 (./home-assignment3.aux)
 Package rerunfilecheck Info: File `home-assignment3.out' has not changed.
 (rerunfilecheck)             Checksum: 633B17B3D188BCFA23649A8C50A80619;200.
@@ -1398,13 +1393,13 @@ Package logreq Info: Writing requests to 'home-assignment3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38207 strings out of 476025
- 777189 string characters out of 5790018
+ 38492 strings out of 476025
+ 784217 string characters out of 5790018
  1868388 words of memory out of 5000000
- 58019 multiletter control sequences out of 15000+600000
+ 58303 multiletter control sequences out of 15000+600000
  530140 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,131p,1895b,1373s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,15n,131p,1895b,1373s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></
@@ -1421,10 +1416,10 @@ ols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr
 </usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/t
 exlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on home-assignment3.pdf (3 pages, 153460 bytes).
+Output written on home-assignment3.pdf (4 pages, 159855 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 108 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
+ 152 PDF objects out of 1000 (max. 8388607)
+ 112 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
