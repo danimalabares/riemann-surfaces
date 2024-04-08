@@ -267,15 +267,18 @@
 
 \begin{proof}\leavevmode
 	\begin{enumerate}[label*=(\alph*)]
-		\item Consider the associated symmetric bilinear form $g$ of $s$. It is a Riemannian structure on $V$. We also have the complex structure on $V$ given by $I(v)=\sqrt{-1}v$. As we have seen in our lectures, together they yield a hermitian metric $h=g+I(g)$ with $I(g)(x,y)=g(Ix,Iy)$. Also, we have a skew-symmetric form $\omega$ given by $\omega(x,y):=h(x,Iy)$.
+		\item The idea here is to construc a Hermitian metric as a sum of the symmetric and a skew-symmetric form as follows:
+		\[h=g-\sqrt{-1}\omega.\]
+		This should be possible given the natural complex structure on $V$ and the bilinear form associated to $s$.
 		
-		{\color{red}The idea here is to decompose the Hermitian metric into a sum of the Riemannian metric and the skew-symmetric form. I expected to confirm the following equation:}
-		\[{\color{red}h=g-\sqrt{-1}\omega,}\]
-		{\color{red}as found in \cite{piccione} eq. 1.4.10.}
-		Now consider two Lagragian Grassmanians $L_1,L_2\in X$ and fix orthonormal bases $(b_j)_{j=1}^n$ and $(b'_j)_{j=1}^n$ with respect to $\omega$. Since both spaces are isotropic, the restriction of $h$ to either of them becomes $\sqrt{-1}\omega$ and thus these bases are $h$-orthonormal. Then we use transitivity of hermitian forms on bases.
+		{\color{red}I am unsure wether $s$ is associated to a symmetric or a skew-symmetric bilinear form: while I initially though it would be just a symmetric form, it appears that Grassmanian Lagrangian subspaces are usually defined as those where the skew-symmetric form $\omega$ vanishes. 
+		
+		In what follows I suppose $s$ is associated to a symmetric bilinear form $g$.}
+		
+		Now consider two Lagragian Grassmanians $L_1,L_2\in X$ and fix orthonormal bases $(b_j)_{j=1}^n$ and $(b'_j)_{j=1}^n$ with respect to $\omega$. Since $s$ vanishes in both spaces, the restriction of $h$ to either of them becomes $\sqrt{-1}\omega$ and thus these bases are $h$-orthonormal. Then we use transitivity of hermitian forms on bases.
 		\item[(b, c)] \iffalse An interesting example (\cite{hatcher}, 4.53) of a fiber bundle is $S^1\to S^{2n+1}\to\C P^n$, given by the map that sends a point to its equivalence class and, as noted in \cref{ex:3.2}, has fiber $S^1$. Surprisingly, this is the case $n=1$ for the more general fiber bundle $\U(n)\to V_n(\C^k)\to G_n(\C^k)$ where $V_n(\C^k)$ is the space of $n$-tuples of orthonormal vectors in $\C^k$ and $G_n(\C^k)$ is the space of $n$-subspaces in $\C^k$. The arrow in the right assigns to a $n$-tuple the vector space it generates, so the fiber is given by all the orthonormal $n$-tuples that generate any given linear space, which is precisely the group of $\U(n)$ by the Gram-Schmidt process.\fi
 		
-		If the previous exercise is correct, the stabilizer $\St_A$ of every maximally isotopric subspace $V\in X$ is the group of matrices that preserve the skew-symmetric form $\omega$, that is, the symplectic group $\Sp([n/2],\C)$. We have a fiber bundle
+		If the previous exercise is correct, the stabilizer $\St_A$ of every maximally isotropic subspace $V\in X$ is the group of matrices that preserve the skew-symmetric form $\omega$, that is, the symplectic group $\Sp([n/2],\C)$. We have a fiber bundle
 		\[\begin{tikzcd}
 			\Sp([n/2],\C)\arrow[r]&\O(n,\C)\arrow[r]&X(n)
 		\end{tikzcd}\]
@@ -284,6 +287,8 @@
 			\pi_0(\Sp([n/2],\C)\arrow[r]&\pi_0(\O(n,\C))\arrow[r]&\pi_0(X(n))\arrow[r]&0.
 		\end{tikzcd}\]
 		Since the symplectic group is connected for all $n$ (\cite{piccione} example 3.2.25), we get $\pi_0(X(n))=\pi_0(\O(n,\C))$ for all $n$, meaning $X(n)$ has two connected components for all $n$.
+		
+		{\color{red} If we associate the quadratic form $s$ to a skew-symmetric form, we get the analogous construction for $\U(n)$ instead of $\Sp([n/2],\C)$ and the result still holds.}
 
 
 	\end{enumerate}
