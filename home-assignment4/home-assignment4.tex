@@ -194,14 +194,9 @@
 	\end{enumerate}
 \end{exercise}
 \begin{proof}[Solution]\leavevmode
-		\begin{enumerate}[label=\alph*.]
-		\item Any reflection inverts orientation, and the composition of an odd number of reflections reverts orientation. The map $-\Id:S^2\to S^2$ reverts orientation because is the composition of 3 reflections.
+		Any reflection inverts orientation, and the composition of an odd number of reflections reverts orientation. The map $-\Id:S^2\to S^2$ reverts orientation because is the composition of 3 reflections.
 		
-		\item[b, c.] \textit{Idea:} the restriction of $-\Id$ to any Riemann surface embedded in $\R^3$ ``symmetrically" about the origin is the map we are looking for.
-		
-		%\item When the genus of $S$ is even.
-		%\item When the genus of $S$ is odd.
-	\end{enumerate}
+		\textit{Idea:} the restriction of $-\Id$ to any Riemann surface embedded in $\R^3$ ``symmetrically" about the origin is the map we are looking for.
 \end{proof}
 
 \begin{exercise}
@@ -214,27 +209,33 @@
 \begin{exercise}
 	Let $S \subset \R^3$ be a smooth compact 2-dimensional submanifold of $\R^3$. Prove that it is orientable.
 \end{exercise}
-\begin{proof}[Thoughts]
-	I couldn't directly construct a nowhere vanishing section of $\Lambda^2(S)$. So I looked in \cite{lee} and found that it suffices to find a smooth unit normal vector field along $S$ (prop. 15.32). But how? Specially considering the case of the Möbius strip, for which such a vector field should not exist.
+\begin{proof}[Solution]
+	%I couldn't directly construct a nowhere vanishing section of $\Lambda^2(S)$. So I looked in \cite{lee} and found that it suffices to find a smooth unit normal vector field along $S$ (prop. 15.32). But how? Specially considering the case of the Möbius strip, for which such a vector field should not exist.
+	
+	The Jordan-Bruower Separation Theorem states that the complement of a compact, connected hypersurface $S$ in $\R^n$ consists of two connected open sets, the "outside" $D_0$ and the "inside"  $D_1$. Moreover, $\overline{D_1}$ is a compact manifold whose boundary is $S$ (p. 89 \cite{guillemin}).
+	
+	For any Riemannian manifold with boundary such as $\overline{D_1}$ there is a unique smooth outward-pointing unit vector $N$ field along its boundary (prop. 15.33 \cite{lee}). In turn, this means that the form 
+	\[N\lrcorner\Vol_{\R^3}=\iota_N\Vol_{\R^3}\in\Lambda^2(\partial\overline{D_1})=\Lambda^2(S)\]
+	does not vanish.
 \end{proof}
 \begin{exercise}
 	Let $M$ be a manifold with fundamental group isomorphic to $\Q$. Prove that $M$ is orientable.
 \end{exercise}
 \begin{proof}[Solution]
-	Suppose $M$ is connected. Let $\tilde{M}$ be the orientable two-sheeted covering space of $M$. Recall that the number of sheets of a covering space $p:(\tilde{M},\tilde{x}_0)\to(M,x_0)$ equals the index of $p_*(\pi_1(\tilde{X},\tilde{x}_0))$ in $\pi_1(M,x_0)$ provided both $M$ and $\tilde{M}$ are path connected. $\Q$ has no subgroups of index 2, so $\tilde{M}$ cannot be connected. Then $\tilde{M}$ must have two connected components since it is a two-sheeted covering space of a connected manifold. Each of the two connected components of $\tilde{M}$ is homeomorphic to $M$, and since $\tilde{M}$ is orientable so is $M$.
+	Suppose $M$ is connected. Let $\tilde{M}$ be the orientable two-sheeted covering space of $M$. Recall that the number of sheets of a covering space $p:(\tilde{M},\tilde{x}_0)\to(M,x_0)$ equals the index of $p_*(\pi_1(\tilde{X},\tilde{x}_0))$ in $\pi_1(M,x_0)$ provided both $M$ and $\tilde{M}$ are path connected. $\Q$ has no subgroups of index 2, so $\tilde{M}$ cannot be connected (prop. 1.32, \cite{hatcher}). Then $\tilde{M}$ must have two connected components since it is a two-sheeted covering space of a connected manifold. Each of the two connected components of $\tilde{M}$ is homeomorphic to $M$, and since $\tilde{M}$ is orientable so is $M$.
 \end{proof}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.355\linewidth]{rational-circle1}\hspace{2cm}
 	\includegraphics[width=0.3\linewidth]{rational-circle2}
-	\caption*{Gluing cylinders to construct the \textbf{\textit{rational circle}}, a space with fundamental group $\Q$. (\cite{rational-circle})}
+	\caption*{\textit{Gluing cylinders to construct the \textbf{\textit{rational circle}}, a space with fundamental group $\Q$. (\cite{rational-circle})}}
 \end{figure}
 
 \begin{exercise}
 	Let $G$ be a Lie group. Prove that its fundamental group is commutative.
 \end{exercise}
 \begin{proof}[Solution]
-	A standard argument found in \href{https://math.stackexchange.com/questions/727999/g-is-topological-implies-pi-1g-e-is-abelian}{StackExchange} uses the \textbf{\textit{Eckmann–Hilton argument}} as follows. We show that the operation
+	A standard argument found in \href{https://math.stackexchange.com/questions/727999/g-is-topological-implies-pi-1g-e-is-abelian}{StackExchange} uses the Eckmann–Hilton argument as follows. We show that the operation
 	\begin{align*}
 		*:\pi_1(G)\times\pi_1(G)\cong\pi_1(G\times G)&\longrightarrow\pi_1(G)\\\\
 		([f],[g])\qquad\qquad&\mapsto[fg]
