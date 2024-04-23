@@ -183,7 +183,7 @@
 \begin{exercise}
 	Let $\gamma:[0,1]\to\R^2$ be a path of lenght 1, with $d(\gamma(0),\gamma(1))>1-\varepsilon^2$. Prove that the image of $\gamma$ is contained in a rectangle of size $\varepsilon\times(1+\varepsilon)$.
 \end{exercise}
-\textit{Attempt of solution.$\quad$}
+\textit{Idea for solution.$\quad$}
 	\iffalse Let $\gamma(x_0)$ be the point on $\img\gamma$ lying farthest from the segment joining $\gamma(0)$ and $\gamma(1)$, and call this distance $r$. Then $\img\gamma$ is contained in a square of $1\times 2r$ and  we have
 	\begin{align*}
 		1-\varepsilon^2<d(\gamma(0),\gamma(1))&\leq d(\gamma(0),\gamma(x_0))+d(\gamma(x_0),\gamma(1))<1
@@ -198,6 +198,7 @@
 		(1-\varepsilon^2)(r_1+r_2)&<\varepsilon(1+\varepsilon)\\
 		\iff r_1+r_2&<\frac{\varepsilon(1+\varepsilon)}{1-\varepsilon^2}
 	\end{align*}
+	\iffalse
 	The partition $0<x_1<x_2<1$ yields
 	\begin{align*}
 		1&\geq d(\gamma(0),\gamma(x_1))+d(\gamma(x_1),\gamma(x_2))+d(\gamma(x_2),\gamma(1))\\
@@ -208,7 +209,7 @@
 		1-d(\gamma(0),\gamma(x_1))-d(\gamma(x_2),\gamma(1))\geq r_1+r_2
 	\end{align*}
 	Projecting $\gamma(x_1)$ and $\gamma(x_2)$ onto the segment joining $\gamma(0)$ and $\gamma(1)$…
-	\iffalse
+	
 	\begin{align*}
 		1-\varepsilon^2<d(\gamma(0),\gamma(1))&=d(\gamma(0),\pi(x_0))+d(\pi(x_0),\pi(x_1))+d(\pi(x_1),\gamma(1))\\
 		&=\sqrt{d(\gamma(0),\gamma(x_1))^2-r_1^2}\\
