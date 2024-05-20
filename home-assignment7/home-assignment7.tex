@@ -1,0 +1,304 @@
+\documentclass{article}
+\usepackage{titlesec}
+
+\usepackage[citestyle=authortitle-terse]{biblatex}
+\addbibresource{bibliography.bib}
+
+\setcounter{secnumdepth}{0}
+%\usepackage{sectsty}
+%\sectionfont{\fontsize{17}{20}\selectfont}
+
+\usepackage[left=4cm, right=4cm]{geometry}
+\usepackage{palatino,eulervm,dutchcal,xcolor}%fonts
+\usepackage{graphicx,subcaption,float}
+\usepackage{enumitem,parskip,multicol}
+\usepackage{amsthm,amssymb,amsmath,mathtools,thmtools}
+\usepackage{tikz,tikz-cd}
+\usetikzlibrary{%
+	matrix,%
+	calc,%
+	arrows,%
+	shapes,
+	decorations.markings,backgrounds,calc,intersections}
+\tikzcdset{scale cd/.style={every label/.append style={scale=#1},
+		cells={nodes={scale=#1}}}}
+\usepackage[bookmarks,bookmarksopen,bookmarksdepth=3]{hyperref}
+\hypersetup{%colores
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=magenta,
+	citecolor=blue,
+	filecolor=blue,
+	urlbordercolor=white,
+	linkbordercolor=white,
+	citebordercolor=white,
+	filebordercolor=white}
+\usepackage{cleveref}
+\Crefname{exercise}{Exercise}{Exercises}
+
+\newcommand{\fakesection}[1]{%
+	\par\refstepcounter{section}% Increase section counter
+	\sectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}% Add section to ToC
+	% Add more content here, if needed.
+}
+
+\makeatletter %Hide section number
+\def\@seccntformat#1{%
+	\expandafter\ifx\csname c@#1\endcsname\c@section\else
+	\csname the#1\endcsname\quad
+	\fi}
+\makeatother
+
+\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\definecolor{azure}{rgb}{0.0, 0.5, 1.0}
+\definecolor{green(ncs)}{rgb}{0.0, 0.62, 0.42}
+\definecolor{forestgreen}{rgb}{0.13, 0.55, 0.13}
+\definecolor{limegreen}{rgb}{0.2, 0.8, 0.2}
+\definecolor{palatinateblue}{rgb}{0.15, 0.23, 0.89}
+\definecolor{trueblue}{rgb}{0.0, 0.45, 0.81}
+\definecolor{goldenyellow}{rgb}{1.0, 0.87, 0.0}
+\definecolor{fashionfuchsia}{rgb}{0.96, 0.0, 0.63}
+\definecolor{brightcerulean}{rgb}{0.11, 0.67, 0.84}
+\definecolor{jonquil}{rgb}{0.98, 0.85, 0.37}
+\definecolor{lavendermagenta}{rgb}{0.93, 0.51, 0.93}
+\definecolor{peru}{rgb}{0.8, 0.52, 0.25}
+\definecolor{persimmon}{rgb}{0.93, 0.35, 0.0}
+\definecolor{persianred}{rgb}{0.8, 0.2, 0.2}
+\definecolor{persianblue}{rgb}{0.11, 0.22, 0.73}
+\definecolor{persiangreen}{rgb}{0.0, 0.65, 0.58}
+\definecolor{persianyellow}{rgb}{0.9, 0.89, 0.0}
+
+\declaretheoremstyle[headfont=\color{trueblue}\normalfont\bfseries,]{colored1}
+\declaretheoremstyle[headfont=\color{forestgreen}\normalfont\bfseries,]{colored2}
+\declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored3}
+\declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored4}
+\declaretheoremstyle[headfont=\color{brightcerulean}\normalfont\bfseries,]{colored5}
+\declaretheoremstyle[headfont=\color{lavendermagenta}\normalfont\bfseries,]{colored6}
+\declaretheoremstyle[headfont=\color{blue-violet}\normalfont\bfseries,]{colored7}
+\declaretheoremstyle[headfont=\color{green(ncs)}\normalfont\bfseries,]{colored8}
+\declaretheoremstyle[headfont=\color{peru}\normalfont\bfseries,]{colored9}
+\declaretheoremstyle[headfont=\color{persiangreen}\normalfont\bfseries,]{colored10}
+\declaretheoremstyle[headfont=\color{red}\normalfont\bfseries,]{colored11}
+
+\declaretheorem[style=colored1,numberwithin=section,name=Theorem]{thm}
+\declaretheorem[style=colored1,numbered=no,name=Proposition]{prop}
+\declaretheorem[style=colored3,numberwithin=section,numberlike=thm,name=Lemma]{lemma}
+\declaretheorem[style=colored4,numberwithin=section,numberlike=thm,name=Corollary]{coro}
+\declaretheorem[style=colored5,numbered=no,name=Example]{example}
+\declaretheorem[style=colored5,numbered=no,name=Examples]{exemplos}
+\declaretheorem[style=colored7,numberwithin=section,name=Exercise]{exercise}
+\declaretheorem[style=colored9,numbered=no,name=Remark]{remark}
+\declaretheorem[style=colored9,numbered=no,name=Claim]{claim}
+\declaretheorem[style=colored8,numbered=no,name=Definition]{defn}
+\declaretheorem[style=colored11,numbered=no,name=Question]{question}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\T}{\mathbb{T}}
+\renewcommand{\P}{\mathbb{P}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Bc}{\mathcal{B}}
+\newcommand{\Cc}{\mathcal{C}}
+\newcommand{\Dc}{\mathcal{D}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Fc}{\mathcal{F}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Lc}{\mathcal{L}}
+\newcommand{\Oc}{\mathcal{O}}
+\newcommand{\Qc}{\mathcal{Q}}
+\newcommand{\Sc}{\mathcal{S}}
+\newcommand{\Wc}{\mathcal{W}}
+\newcommand{\mf}{\mathfrak{m}}
+\newcommand{\gf}{\mathfrak{g}}
+\newcommand{\X}{\mathfrak{X}}
+\newcommand{\hf}{\mathfrak{h}}
+\newcommand{\glf}{\mathfrak{gl}}
+\newcommand{\of}{\mathfrak{o}}
+
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\O}{\operatorname{O}}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\T}{\mathbb{T}}
+\DeclareMathOperator{\Lie}{\operatorname{Lie}}
+
+\DeclareMathOperator{\img}{img}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\I}{I}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\Alt}{Alt}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Top}{Top}
+\DeclareMathOperator{\CGWH}{CGWH}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Map}{Map}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\VectBund}{VectBund}
+\DeclareMathOperator{\Open}{Open}
+\DeclareMathOperator{\Ring}{Ring}
+\DeclareMathOperator{\Set}{Set}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\M}{M}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\St}{St}
+\DeclareMathOperator{\Vol}{Vol}
+\DeclareMathOperator{\Length}{Length}
+
+\begin{document}
+\begin{minipage}{\textwidth}
+	\begin{minipage}{.5\textwidth}
+		Complex Manifolds in Dimension 1
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\raggedleft
+		Daniel González Casanova Azuela\par
+		{\small\href{https://github.com/danimalabares/riemann-surfaces}{github.com/danimalabares/riemann-surfaces}}
+	\end{minipage}%
+\end{minipage}\vspace{.2cm}\hrule
+\section{Home Assignment 7: Coverings}
+\setcounter{section}{7}
+\begin{defn}
+	A \textbf{\textit{covering}} is a continuos map $\pi:M_1\to M$ such that for each $x\in M_1$ there exists a neighbourhood $U\subset M$ such that $\pi^{-1}(U)=U\times S$ where $S$ is a fixed set with discrete topology and $\pi:\pi^{-1}=U\times S\to M$ is a projection. A \textbf{\textit{morphism of coverings}} $\pi_1:M_1\to M$, $\pi_2:M_2\to M$ is a map $f:M_1\to M_2$ which commutes with the projections to $M$. A covering $M_1\to M$ is called \textbf{\textit{universal covering}} if $M_1, M$ are connected and $M_1$ is simply connected.
+\end{defn}
+\begin{defn}
+	A continuos map $\pi:M_1\to M$ is called \textbf{\textit{proper}} if for any compact $K\subset M$ the preimage $\pi^{-1}(K)$ is compact.
+\end{defn}
+\begin{exercise}
+	Let $\pi : M\to M_1$ be a smooth map of $n$-manifolds with differential non-degenerate everywhere. Assume that $\pi$ is proper. Prove that $\pi$ is a covering.
+\end{exercise}
+\begin{proof}
+	Since $d\pi$ is non-degenerate everywhere, $\pi^{-1}(p)$ is a submanifold of $M$ for every $p\in M_1$. But also every point $p\in M$ must have a compact neighbourhood, whose preimage under $\pi$ is also compact. This makes the preimage manifold $\pi^{-1}(p)$ compact, but not necessarily discrete.
+	
+	It appears that \href{https://math.stackexchange.com/questions/4384022/fiber-bundle-map-is-proper-if-the-model-fiber-is-compact?noredirect=1&lq=1}{a fiber bundle is proper if fibers are compact}, giving a large family of counter-examples such as the Hopf fibration.
+\end{proof}
+\begin{defn}
+	Let $\pi_1:M_1\to M$, $\pi_2:M_2\to M$ be continuous maps. \textbf{\textit{Fibered product}} $M_1\times M_2$ is the subset of $M_1\times M_2$ defined as $M_1\times_MM_2:=\{(x,y)\in M_1\times M_2|\pi_1(x)=\pi_2(y)\}$ with induced topology.
+\end{defn}
+\begin{exercise}
+	Let $\pi_1 : M_1 \to M$, $\pi_2 : M_2 \to M$ be coverings. Prove that $M_1\times_M M_2 \to M$ is also a covering.
+\end{exercise}
+\begin{proof}
+	Every point in $M$ has two open sets such that their preimages under $\pi_1$ and $\pi_2$, respectively, are a union of disjoint open sets. The intersection of these two open sets in $M$ is also an open set in $M$, whose preimage under both projections is a disjoint union of open sets.
+\end{proof}
+Recall the followings results that may be found in \cite{hatcher}:
+\begin{prop}[Homotopy lifting property]
+	Given a covering space $M_1\to M$, a homotopy $f_t:Y\to X$ and a map $\tilde f:Y\to\tilde X$ lifting $f_0$, there exists a unique homotopy $\tilde f_t:Y\to\tilde X$ lifting $f_t$.
+\end{prop}
+\begin{prop}[Lifting criterion]
+	Suppose given a covering space $\pi:(M_1,m_1)\to (M,m)$ and a map $f:(X,x)\to (M,m)$ with $X$ path connected and locally path-connected. Then a lift $(\tilde X,x)\to (M_1,m_1)$ of $f$ exists iff $f_*(\pi_1(X,x))\subset\pi_*(\pi_1(M_1,m))$.
+\end{prop}
+\begin{prop}[Uniqueness of lifts]
+	Given a covering space $\pi:M_1\to M$ and a map $f:X\to M$, if two lifts $\tilde f_1,\tilde f_2:X\to M_1$ agree at one point of $X$ and $X$ is connected, then $\tilde f_1$ and $\tilde f_2$ agree throughout $X$.
+\end{prop}
+\begin{exercise}
+	Let $\pi_1 : M_1 \to M$ , $\pi_2 : M_2 \to M$ be universal coverings. Prove that $M_1 \times_M M_2 \to M$ is a union of $\pi_1(M)$ disconnected copies of $M_1$. Deduce that the universal covering is unique up to an isomorphism of coverings.
+\end{exercise}
+\iffalse
+\begin{proof}[Solution]
+	Universal covering means that it is a cover of any other connected covering. Since $M_1\times_M M_2$ is also a cover, we have covering maps
+	\[\begin{tikzcd}
+		M_1\arrow[dr,dashed]\arrow[ddr,bend right,"\pi_1",swap]&&M_2\arrow[dl,dashed]\arrow[ddl,bend left,"\pi_2"]\\
+		&M_1\times_M M_2\arrow[d]\\
+		&M
+	\end{tikzcd}\]
+	A class of loops $[\gamma]$ in $\pi_1(M)$ 
+\end{proof}\fi
+\begin{proof}[Proof of uniqueness of universal covering]
+	Universal covering is a covering of every other covering by Exercise 7.5. Then we have coverings $f_1:M_1\to M_2$ and $f_2:M_2\to M_1$. Now notice that $f_2f_1$ is a lift of $p_1$ to $M_1$ as in the next diagram
+	\[\begin{tikzcd}
+		&&M_1\arrow[dd,"\pi_1"]\\
+		&M_2\arrow[ur,"f_2"]\\
+		M_1\arrow[ur,"f_1"]\arrow[rr,swap,"\pi_1"]&&M
+	\end{tikzcd}\]
+	This follows from simply conectedness of $M_1$ and the lifting criterion. Notice the identity map of $M_2$ is also a lift of $\pi_1$. Recall that two lifts are the same if they agree in one point. The coverings must be pointed for these arguments to work, and indeed $f_2f_1$ must fix the basepoint of $M_1$. This shows that $f_2f_1=\id_{M_1}$. A similar argument shows that $f_1f_2=\id_{M_2}$.
+\end{proof}
+\begin{exercise}
+	Let $\pi : M_1\to M$ be the universal covering. Prove that the group $\Aut_M(M_1)$ of its automorphisms (in the category of coverings) is isomorphic to $\pi_1(M)$.
+\end{exercise}
+\begin{proof}
+ 	Take $[\gamma]\in\pi_1(M,m)$ and consider the lift of $\gamma$ to a path $\tilde\gamma$ in $M_1$ that joins two elements in $\pi^{-1}(m)$, say $m_1$ and $m_2$. Once again we may use the lifting property to find a covering automorphism:
+	\[\begin{tikzcd}
+		&(M_1,m_2)\arrow[d,"\pi_1"]\\
+		(M_1,m_1)\arrow[ur,dashed]\arrow[r,"\pi_1",swap]&(M,m)
+	\end{tikzcd}\]
+	This map is independent of the choice of $\gamma$ by the homotopy lifting criterion. By uniqueness of lifts, the covering automorphism is completely determined by mapping $m_1$ to $m_2$. Thus any two elements of $\pi_1(M)$ whose lifts join $m_1$ and $m_2$ induce the same automorphism. Two distinct homotopy classes of loops cannot join the same points since $M_1$ is simply connected and an homotopy between the lifted paths would project to a homotopy between the loops.
+	
+	This map is also surjective, since any automorphism of covers sending $m_1$ to $m_2$ corresponds to some loop whose lift joins these points. It also a group homomorphism since concatenation corresponds to composition, and an isomorphism since the construction of the inverse map is analogous.
+\end{proof}
+\begin{exercise}
+	Let $\pi:M_1\to M$ be a connected covering, and $u:M_u\to M$ be the universal covering. Prove that $M_u\times_MM_1$ is a disconnected sum of several copies of $M_u$. Prove that the map $u:M_u\to M$ can be factorized through $\pi:M_1\to M$, with $u$ equal to a composition \begin{tikzcd}[column sep=small]
+		M_u\arrow[r,"\phi"]&M_1\arrow[r,"\pi_1"]&M.
+	\end{tikzcd}
+\end{exercise}
+\begin{proof}
+	(From \href{https://math.stackexchange.com/questions/1573115/the-universal-cover-of-a-path-connected-locally-path-connected-space-x-covers}{StackExchange}) By the lifting criterion, since $M_u$ is simply connected we have a map
+	\[\begin{tikzcd}
+		&M_1\arrow[d,"\pi_1"]\\
+		M_u\arrow[ur,dashed,"\tilde\pi"]\arrow[r,"\pi_u",swap]&M
+	\end{tikzcd}\]
+	We claim $\tilde\pi$ is a covering.
+	
+	\textbf{($\tilde\pi$ is surjective.)} Let $m_1\in M_1$. Choose any path $\gamma$ in $M_1$ from any other point $m_0\in M_1$ to $m_1$. Project such path to $M$, then lift to $M_u$ to obtain a path $\tilde\gamma$. Then project to $M_1$ via $\tilde\pi$:
+	\[\begin{tikzcd}
+		&&M_u\arrow[dl,"\tilde\pi"]\arrow[d,"\pi_u"]\\
+		I\arrow[r,"\gamma",swap]\arrow[urr,dashed,"\tilde\gamma"]&M_1\arrow[r,"\pi_1",swap]&M
+	\end{tikzcd}\]
+	By uniqueness of path lifting, endpoint of $\tilde\pi\circ\tilde\gamma$ coincides with the endpoint of $\gamma$, meaning there is a point in $M_u$ mapping to $m_1$.
+	
+	\textbf{($\tilde\pi$ is covering)} Let $m_1\in M_1$. Project to $M$ to obtain regular neighbourhoods $U_u$ and $U_1$ of $\pi_1(m_1)$ for $\pi_u$ and $\pi_1$. (\textbf{\textit{Regular}} means as in definition of covering.) Let $V$ be the connected component of $m_1$ in $\pi_1^{-1}(\pi_1(m_1))$. Let $\pi_u^{-1}(U_u)=\coprod U_\alpha$. Then $\tilde\pi^{-1}(V)$ is contained in $\coprod U_\alpha$ and mapped homeomorphically to each $U_\alpha$ by commutativty of the diagram.
+\end{proof}
+\begin{exercise}
+	Let $\pi:M_1\to M$ be a connected covering. Prove that $\pi$ induces a group monomorphism $\pi_1(M_1)\to\pi_1(M)$. Prove that the isomorphism classes of connected coverings $\pi:M_1\to M$ are in bijective correspondence with subgroups of $\pi_1(M)$.
+\end{exercise}
+\begin{proof}
+	\textbf{(Induced map is monomorphism.)} Let $[\gamma]$ be an element of the kernel of the induced map. This means that there is a homotopy between $\pi\circ\gamma$ and the constant loop in $M$. By the homotopy lifting property of covering spaces, this homotopy lifts to a homotopy of loops between $[\gamma]$ and the constant loop in $M_1$.
+	
+	\textbf{(Bijective correspondence)} Consider the correspondence
+	\[\text{covering }\quad p:M_1\to M\qquad\qquad\to\qquad\qquad p_*(\pi_1(M_1))\subset\pi_1(M)\]
+	
+	\begin{claim}
+		Two connected coverings $p_1:M_1\to M$ and $p_2:M_2\to M$ are isomorphic iff $p_{1*}(\pi_1(M_1)=p_{2*}(\pi_1(M_2))$.
+	\end{claim}
+	\begin{proof}
+		Suppose $f:M_1\to M_2$ is a covering isomorphism. Then $p_1=p_2f$ and $p_2=p_1f^{-1}$, which means $p_{1*}=p_{2*}f_*$ and $p_{2*}=p_{1*}f^{-1}_*$. Since $f$ is an isomorphism it induces isomorphism on fundamental groups, yielding the result.
+		
+		The converse follows by the lifting criterion and uniquencess of lifts.
+	\end{proof}
+	
+	\begin{claim}
+		For every subgroup $H\subset \pi_1(M)$ there is a covering space $M_H$ such that $\pi_*(\pi_1(X_H))=H$. 
+	\end{claim}
+	\begin{proof}[Sketch of proof]
+		 This proof uses the construction of the universal covering as the space of paths in $M$ starting at a given point. Define an equivalence relation $\sim$ between two such paths it they end at the same point and their concatenation is in $H$. Define $M_H=M_1/\sim$.
+	\end{proof}
+\end{proof}
+\begin{exercise}
+	Let $x\in M$ be a point in a connected manifold $M$. Consider a functor $\Phi$ from the category $\Cc_M$ of coverings of $M$ to the category of sets mapping a covering $\pi:M_1\to M$ to $\pi^{-1}(x)$. Prove that the fundamental group $\pi_1(M,x)$ naturally acts on the set $\pi^{-1}(x)$. Prove that $\Phi$ defines an equivalence of categories from $\Cc_M$ to the category of sets with an action of the group $\pi_1(M,x)$.
+\end{exercise}
+\begin{proof}
+	Fix a covering $\pi:M_1\to M$, a point in $x_0\in\pi^{-1}(x)$ and an element $[\gamma]\in\pi(M,x)$. Any represenant of $[\gamma]$ lifts uniquely to a path starting in $x_0$, yielding an action on $\pi^{-1}(x)$. Trivial loop fixes every point in $\pi^{-1}(x)$ and concatenation of loops is composition, yielding a group action.
+	
+	This shows how any covering space corresponds to a set with a group action of $\pi_1(M,x)$. For the converse {\color{red}I wish to show} that a set with an action of $\pi_1(M,x)$ corresponds to a subgroup of $\pi_1(M,x)$ and use Exercie 7.6.
+\end{proof}
+%\printbibliography
+\end{document}
