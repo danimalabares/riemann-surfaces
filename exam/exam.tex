@@ -1,0 +1,215 @@
+\input{~/github/config/preamble.sty}%available at github.com/danimalabres/config
+
+%\usepackage[style=authortitle-terse,backend=bibtex]{biblatex}
+%\addbibresource{bibliography.bib}
+
+\begin{document}
+
+\begin{minipage}{\textwidth}
+		Complex Manifolds in Dimension 1 \hfill Daniel González Casanova Azuela
+		
+		{Prof. Misha Verbitsky\hfill\href{https://github.com/danimalabares/riemann-surfaces}{github.com/danimalabares/riemann-surfaces}}
+\end{minipage}\vspace{.2cm}\hrule
+
+\vspace{10pt}
+{\huge\bfseries Exam}
+
+\tableofcontents
+
+\addcontentsline{toc}{subsection}{Exercise 1.3}
+\begin{manualexercise}{1.3}
+	Let $M$ be an almost complex manifold, and $f:M\to \mathbb{R}$ a non-constant function which satisfies $d Jd(f)=0$. Prove that $M$ admits a non-zero holomorphic 1-form (this means closed form).
+\end{manualexercise}
+
+\begin{proof}[Solution]
+	It is unclear what is the definition of a holomorphic form on an almost complex manifold. Here's some ideas:
+
+	The form $\alpha:=df-\sqrt{-1}Jdf$ is complex linear since for any vector $v$
+	\begin{align*}
+		\alpha(Jv)&=\Big(df-\sqrt{-1}Jdf\Big)(Jv)\\
+		&=df(Jv)-\sqrt{-1}df(J^2v)\\
+		&=df(Jv)+\sqrt{-1}df(v)\\
+		&=-\sqrt{-1}^2df(Jv)+\sqrt{-1}df(v)\\
+		&=\sqrt{-1}\Big(df(v)-\sqrt{-1}d Jf(v)\Big)\\
+		&=\sqrt{-1}\Big(df-\sqrt{-1}Jdf\Big)(v)\\
+		&=\sqrt{-1}\alpha(v).
+	\end{align*}
+
+But then again it may be more suitable to find a form whose \textit{differential} is complex-linear. After consulting with Misha, he said to find a form that is closed… but $d Jd(f)$ is already closed!
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 1.7}
+\begin{manualexercise}{1.7}
+	Let $\eta$ be a closed 1-form on a 1-dimensional complex manifold $(M,I)$ such that $I(\eta)$ is also closed.
+
+	\begin{enumerate}
+		\item[a.] [Not part of the exam] Prove that $\eta=df$, where $f$ is a real part of a holomorphic function if $M$ is simply connected.
+
+		\item[b.] Find an example of $(M,I,\eta)$ where $\eta$ is exact, but such $f$ does not exist.
+	\end{enumerate}
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode 
+
+	(See \href{https://math.stackexchange.com/questions/711950/show-omega-is-simply-connected-if-every-harmonic-function-has-a-conjugate}{StackExchange}.) The idea is to define the form as the exterior derivative of the real part of a logarithm. The logarithm cannot be defined globally so that function is not the real part of a holomorphic function.
+
+	Summary: on any non-simply connected open subset $\Omega$ of $\mathbb{C}$ we can find a function, namely $u(z)=\log |z-w|$ with $w\notin \Omega$ such that there is a curve with nonezero winding number around it contained in $\Omega$. This function is harmonic but it is not the real part of a holomorphic function (which would be a complex logarithm).
+
+	\begin{enumerate}[label=\textbf{Step \arabic*}]
+		\item  Define $u(z)=\log|z-w|$ on a non-simply connected subset $\Omega\subset \mathbb{C}$ not containing $w$. Also let $\gamma$ be a curve with nonzero winding number with respect to $w$.
+		
+		\item Notice that $u$ is harmonic because it is \textit{locally} the real part of a holomorphic function, the logarithm.
+
+		\item Suppose $v$ is such that $f:=u+iv$ is holomorphic. Recall that harmonic conjugates are unique up to adding a constant by Cauchy-Riemann equations. This means that the derivative of $f$ is the same as the detivative of the logarithm, ie., $f'(z)=\frac{1}{z-w}$.
+
+	\item Remember the definition of the winding number:
+	\[n(\gamma,w)=\frac{1}{2\pi i}\int_{\gamma}\frac{dz}{z-w}=\frac{1}{2\pi i}\int_{\gamma}f'\]
+	so $n(\gamma,w)\neq0$ by the choices of $\gamma$ and $w$, but its also $0$ because it's the integral of a holomorphic function over a closed curve.
+	\end{enumerate}
+
+
+
+	Now let's solve our exercise. Consider $\eta=du$ for the same $u$ as above. We already know that $u$ is not the real part of a holomorphic function but perhaps there is another function  $\tilde{u}$ such that $\eta= d\tilde{u}$ and $\tilde{u}$ is is the real part of a holomorphic function. Then $d(u-\tilde{u})=0$ so  $u-\tilde{u}$ is constant so $\tilde{u}(z)=\log|z-w|+\lambda$. But the same argument shows that such a function cannot be the real part of a holomorphic function.
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 2.7}
+\begin{manualexercise}{2.7}
+	Let $f_{i}$ be a collection of homolomorphic functions on a disk such that $\sum_{i=1}^{\infty} |f_{i}(z)|$ converges uniformly on $\Delta$. Prove that $\sum_{i=0}^{\infty}|f'(z)|$ converges uniformly on $\Delta$.
+\end{manualexercise}
+
+\begin{proof}[Solution]
+	I could prove that $\sum_{i=0}^\infty f'(z)$ (without the bars) converges (uniformly) on $ \Delta$. However, looks like the answers might be that such a function cannot exist.
+
+
+
+\addcontentsline{toc}{subsubsection}{A possible counter-example}
+\vspace{1em}\textbf{A possible counter-example}
+
+(See \href{https://math.stackexchange.com/questions/380446/prove-that-a-bounded-analytic-function-in-the-right-half-plane-which-vanishes-at}{StackExchange}). The proposed counter example is
+	\[f_n(z)=\frac{1}{n^2}\sqrt{1+z} \]
+	The reason is that the series converges to $\frac{\pi^2}{6}\sqrt{1+z} $, but the series of derivatives is unbounded, so "it cannot be uniformly convergent". But of course unboundedness alone does not imply that the sequence of derivatives cannot converge uniformly---for any unbounded function on a domain, just substracting a $1/n$-term will produce a uniformly convergent series of unbounded functions.
+\vspace{1em}
+
+\addcontentsline{toc}{subsubsection}{Proof of the statement without taking modulus}
+\textbf{Proof of the statement without taking modulus}
+
+Now I show how that if $\sum_{i=1}^{\infty} |f_{i}(z)|$ converges uniformly on $\Delta$, then$\sum_{i=0}^{\infty}|f'(z)|$ converges on $\Delta$.
+
+	Recall from Alhfors \textit{Complex Analysis} (p. 176) Weierstrass theorem that if a sequence of holomorphic functions on a region $\Omega$ (a region is a nonempty connected open set) converges to a limit function $f$ in $\Omega$ and uniformly on every compact subset of $\Omega$, then  $f$ is analytic on $\Omega$. Moreover, $f'_{i}$ converges uniformly to $f'$ on every compact subset of $\Omega$.
+
+	This is almost exactly what we need. Following I sketch the Ahlfor's proof slightly adapted to the exercise.
+
+
+	Recall that an absolutely uniform convergent series is uniformly convergent, so that the sequence of partial sums $F_n=\sum_{i=1}^{n} f_i$ without the bars is uniformly convergent. Choose any point $z\in \Delta$ and a closed curve contained in $\Delta$ around $z$. Then Cauchy formula for the first derivative says $F'_{n}(z)=\frac{1}{2\pi i}\int_{\gamma}\frac{F_n(\zeta)}{(\zeta-z)^{2}}d\zeta$ for every $n \in \mathbb{N}$.
+	%But we may also put the bars to get $|F'_{n}(z)|=\left|\frac{1}{2\pi i}\int_{\gamma}\frac{F_n(\zeta)}{(\zeta-z)^{2}}d\zeta\right|$ for every $n \in \mathbb{N}$. 
+	Now take limit and put it inside the integral using uniform convergnce of $F_n$ to get that
+	\begin{align*}
+	\sum_{i=1}^{\infty} f_i' &=\frac{1}{2\pi i}\int_{\gamma}\frac{\sum_{i=1}^{\infty} f_i(\zeta)}{(z-\zeta)^{2}}d\zeta\\
+	%&=\left| \frac{1}{2\pi i}\int_{\gamma} \right|
+\end{align*}
+which says that $\sum_{i=1}^{\infty} f'$ converges to the derivative of $\sum_{i=1}^{\infty} f$. Then Ahlfors says a simple estimate shows convergence is uniform but I'm not sure how exactly.
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 2.8}
+\begin{manualexercise}{2.8}
+	Construct a non-zero bounded homolomorphic function on $\{z\in \mathbb{C}:\operatorname{Re}(z)>0\} $ such that $f(n)=0$ for all $n \in \mathbb{Z}^{>0}$.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode 
+	(See \href{https://math.stackexchange.com/questions/380446/prove-that-a-bounded-analytic-function-in-the-right-half-plane-which-vanishes-at}{StackExchange}) Such a function doesn't exist. We will show it must be constant.
+\begin{enumerate}[label=\textbf{Step \arabic*}]
+		\item Pass to a function whose domain is the unit disk by composing $f$ with a M\"obius transformation that maps the disk to the right-hand plane, namely $z\mapsto \frac{1}{1+z}-\frac{1}{2}$. So define $g(z)=f\left( \frac{1}{1+z}-\frac{1}{2} \right) $.
+
+		\item $g(z)=0$ when $\frac{1}{1+z}-\frac{1}{2}$ is an integer $n$ so define $z_{n}=-1+\frac{1}{n+\frac{1}{2}}$.
+
+		$\prod_{n} |z_{n}| $ diverges to zero. That means that it converges to zero but the infinite sum (series) the logarithms diverges.
+
+		\item Consider the inverse of a finite Blaschke product that vanishes on the $z_{n}$ (this is why we put everything inside the unit disk). It is $\tilde{B}_{k}(z)=\prod_{n=1}^{k} \frac{1-z\cdot z_{n}}{z-z_{n}}  $. Also consider the product $g\cdot \tilde{B}_{k}$, which is analyitic because $g$ vanishes at the poles of $\tilde{B}_{k}$.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{Figure_1.png}
+	\caption{Domain coloring plot for $\tilde{B}$}
+\end{figure}
+
+		\item Recall that the modulus of such a function takes its maximum at the boundary of its domain. Then show that $|\tilde{B}_{k}(z)|$ is bounded by 1 (I'm not sure how). We already know that $g$ is bounded by some number $M$ because $f$ is bounded by hypothesis. We have $|g(z)| \leq \frac{M}{|\tilde{B}_{k}(z)|}$ for all $|z|<1$ and all $k$.
+
+		\item Put $z=0$, you get $|g(z)| \leq M\cdot \prod_{n\leq k} |z_{n}| $ and take limit as $k\to \infty$. The product diverges to zero so $g(0)=0$.
+
+		\item That means $\frac{g(z)}{z}$ is analytic so do everything again with $\frac{g(z)}{z}$ instead of $g(z)$. And again for $\frac{g(z)}{z^{2}}$. And so on. $g$ has a zero of infinite order, which is not possible and thus it is constant zero.
+	\end{enumerate}
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 3.3}
+\begin{manualexercise}{3.3}
+	Let $V$ be an $n$-dimensional Hermitian complex space of signature $(1,n-1)$. Prove that the space $B\subset \mathbb{P}_{\mathbb{C}}V$ of all positive complex lines in $V$ biholomorphic to a ball in $\mathbb{C}^{n-1}$.
+\end{manualexercise}
+
+\begin{proof}[Solution]
+	(See \href{https://en.wikipedia.org/wiki/Complex_hyperbolic_space#Projective_model}{Wiki}.) A positive line is a 1-dimensional subspace $\ell$ such that $q(x,x)>0$ for some (and hence all) $x\in \ell$. For a line to be positive there must be a representative with non-zero first coordinate, which we may choose (uniquely) to be 1. Then
+	\[q(x,x) >0\quad \iff\quad 1>\sum_{i=2}^{n} |x_i|^2.\]
+We have constructed a biholomorphism
+\begin{align*}
+	B &\longrightarrow \{ |x|<1\} \subset \mathbb{C}^{n-1} \\
+	[1:x_2:\ldots:x_n] &\longmapsto (x_2,\ldots,x_n)
+\end{align*}
+
+\end{proof}
+
+\begin{manualdef}{3.1}
+	\textit{\textbf{Horocycle}} on a Poincar\'e plane is an orbit of a parabolic subgroup
+	\[P_{t}=\begin{pmatrix}1&t\\0&1\end{pmatrix}\in \operatorname{PSL}(2,\mathbb{R})=\operatorname{SO}^{+}(1,2). \]
+\end{manualdef}
+
+\addcontentsline{toc}{subsection}{Exercise 3.7}
+\begin{manualexercise}{3.7}
+	Prove that the group of isometries $\operatorname{Iso}(\mathbb{H}^{2})=\operatorname{SO}^{+}(1,2)$ acts transitively on the set of horocycles.
+\end{manualexercise}
+
+\begin{proof}[Solution]
+	Let's fix two parabolic subgroups. I say that there is an isometry in $\operatorname{Iso}(\mathbb{H}^2)$ that maps one to the other via conjugation. This gives a transitive action on horocycles: two horocycles, each determined by a point and a parabolic subgroup, are paired via a single element of $\operatorname{Iso}(\mathbb{H}^2)$ (the pairing is via conjugation on subgroups and usual mapping on points).
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 4.2}
+\begin{manualexercise}{4.2}
+	Let $M$ be a compact, Kobayashi-hyperbolic complex manifold. Prove that $M$ does not admit non-zero holomorphic vector fields.
+\end{manualexercise}
+
+\begin{proof}[Solution]\leavevmode
+
+Integrating a non-zero vector field on $M$ gives a complex 1-parameter subgroup acting on $M$. Let's show that $\mathbb{C}$ cannot act nontrivially on $M$. Suppose that $f:\mathbb{C}\times M\to M $ is an holomorphic action of $\mathbb{C}$ on $M$. Then for each $p\in M$, the map $a\in\mathbb{C}\mapsto f(a,p)\in M$ is holomorphic, so it is distance decreasing with respect to Kobayashi distances in $\mathbb{C}$ and $M$ (i.e. it is 1-Lipschitz). But Kobayashi distance in $\mathbb{C}$ is trivial, making the action trivial.
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 4.6}
+\begin{manualexercise}{4.6}
+	Let $a,b,c\in \operatorname{Abs}$ be three distinct points on the absolute, and $A\in \operatorname{SO}^{+}(1,2)$ an isometry of Poincar\'e plane which fixes $a,b,c$. Prove that $A=\operatorname{Id}$.
+\end{manualexercise}
+
+\begin{proof}[Solution]
+	We have seen in our lectures that $\operatorname{SO}^{+}(1,2)$ is isomorphic to the group of transformations $z\mapsto \frac{az+b}{cz+d}$ with $a,b,c,d\in \mathbb{R}$ and $ad-bc>0$. Such transformations act on the upper-half plane as hyperbolic isometries.  A fixed point of any such transformation is solution of a quadratic equation, which has potentially only two distinct solutions. Thus, if a transformation fixes three distinct points, it must be the identity.
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 5.2}
+\begin{manualexercise}{5.2}
+	Let $M$ be a Riemann surface with infinite fundamental group. Prove that any continuous map $S^{2}\to M$ is homotopic to a trivial map (map to a point).
+\end{manualexercise}
+
+\begin{proof}[Solution]
+%	Let's see what's up with the induced map $\pi_{1}(S^{2})\to \pi_{1}(M)$. Well it is trivial because $S^{2}$ is simply-connected.
+
+	All higher homotopy groups of Riemann surfaces of nonzero genus are trivial by covering space argument. For $S^{2}$ itself, the statement does not hold since it would imply that $-\operatorname{Id}$ is homotopic to $\operatorname{Id}$, which is not true (but of course, the fundamental group of $S^2$ is not infinite).
+\end{proof}
+
+\addcontentsline{toc}{subsection}{Exercise 5.8}
+\begin{manualexercise}{5.8}
+	Let $TS^{2}\oplus C^{\infty} S^{2}$ be a direct sum of a tangent bundle $TS^{2}$ and a 1-dimensional bundle. Is the bundle $TS^{2}\oplus C^{\infty} S^{2}$ trivial?
+\end{manualexercise}
+
+\begin{proof}[Solution]
+	[From Hatcher VBK p. 10.] The direct sum of $TS^{2}$ and its normal bundle $NS^{2}$ is trivial since the map $(x,v,tx)\mapsto (x,v+t x)$, with $v$ tangent at $x\in S^{2}$ and $t\in \mathbb{R}$, is an isomorphism $TS^{2}\oplus NS^{2}\cong S^{2}\times \mathbb{R}^{3}$. The idea here is that while any global section will vanish at one point $x\in S^{2}$, so $v_{x}=0$, the point $x$ will never be zero.
+
+	Recall that a vector bundle isomorphism consists of an homeomorphism of the total spaces that restricts to a linear isomorphism between corresponding fibers. It is clear that the map above is an homeomorphism, and fixing $x \in S^{2}$ we also find a trivial isomorphism between the fibers---there isn't much to say here.
+
+	For a line bundle $C^{\infty} S^{2}$ that is always linearly independent with respect to $TS^{2}$ (which is the case since we have a direct sum), the map $(x,v,y)\mapsto (x,v+y)$ yields an isomorphism $TS^{2}\oplus C^{\infty} \cong S^{2}\times \mathbb{R}^{2}$ or $S^{2}\times \mathbb{R}^{3}$ depending on the rank of $TS^{2}$.
+\end{proof}
+
+\end{document}

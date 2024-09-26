@@ -176,69 +176,32 @@
 		{\small\href{https://github.com/danimalabares/riemann-surfaces}{github.com/danimalabares/riemann-surfaces}}
 	\end{minipage}%
 \end{minipage}\vspace{.2cm}\hrule
-\section{Home Assignment 8: Foliations}
-\setcounter{section}{8}
-\begin{defn}
-	Let $B\subset TM$ be a involutive sub-bundle. The corresponding \textbf{\textit{(smooth) foliation}} is a collection of immersed submanifolds $X\overset{\phi}{\hookrightarrow}M$ which are tangent to $B$ everywhere, that is $\phi(T_xX)=B|_x$. These submanifolds are called \textbf{\textit{leaves}} of the foliation, and $B$ its \textbf{\textit{tangent bundle}}. Its \textbf{\textit{rank}} is $\rk B$. Frobenius theorem claims that $M$ is the union of all leaves of $\Fc$. The \textbf{\textit{leaf space}} is the set of all leaves of $\Fc$ with the quotient topology (a set is open if its preimage in $M$ is open).
-\end{defn}
+\section{Home Assignment 9: Connections and curvature}
+\setcounter{section}{9}
+
 \begin{exercise}
-	Construct a foliation on a simply connected compact manifold with all leaves non-compact.
+	Let $(B,\nabla )$ be a rank 1 bundle with connection over a circle $S^{1}$, and $\nabla ':=\nabla +\theta$, where $\theta\in \Lambda^{1}(S^{1})$ is a 1-form, understood as a section of $\Lambda^{1}(S^{1})\otimes \operatorname{End}(B)$. Prove that holonomy of $\nabla '$ is equal to holonomy of $\nabla$ if and only if $\theta$ is exact.
 \end{exercise}
-\begin{proof}
-	Let us discard a few cases:
-	\begin{itemize}
-		\item By an argument related to the inexistence of nowhere vanishing vector fields, (also shown by Thurston, see \href{https://math.stackexchange.com/questions/2207862/foliations-of-spheres}{StackExchange}), there are no codimension-one foliations on spheres of even dimension.
-		\item By \href{https://en.wikipedia.org/wiki/Novikov%27s_compact_leaf_theorem#Novikov's_compact_leaf_theorem_for_any_M3}{Novikov's theorem}, any codimension-one foliation on a 3-manifold with finite fundamental group must have a compact leaf.
-	\end{itemize}
-	Which leaves us with spheres of odd dimension greater than 3, or foliations that are not codimension-one.
-	
-	After asking on \href{https://math.stackexchange.com/questions/4922971/construct-a-foliation-on-a-simply-connected-compact-manifold-with-all-leaves-non/4924661#4924661}{StackExchange}, a satisfactory answer was received citing \cite{seifert}, where a foliation on $S^3$ with noncompact orbits is constructed thus constructing a counter-example to a conjecture by Seifert.
-\end{proof}ouou oou
+
 \begin{exercise}
-	Prove that $\C P^n$ does not admit a rank 1 foliation.
+Let $(B,\nabla )$ be a bundle with connection over $M$, and $\nabla ':=\nabla +\theta$, where $\theta\in \Lambda^{1}(M)$ is a 1-form, understood as a section of $\Lambda^{1}(S^{1})\otimes \operatorname{Id}_{B}$, where $\operatorname{Id}_{B}\in \operatorname{End}(B)$ is the identity section. Assume that both $\nabla$ and $\nabla '$ are flat. Prova that $d\theta=0$.
 \end{exercise}
-\begin{proof}
-	%\href{https://math.stackexchange.com/questions/3494855/show-that-hopf-foliation-is-a-foliation}{The fibers of a fiber bundle are a foliation of the total space.}
-	Suppose such foliation exists and consider the lifts of every submanifold:
-	\[\begin{tikzcd}
-		&\S^{2n+1}\arrow[d]\\
-		X\arrow[r,hook]\arrow[ur,dashed]&\C P^n
-	\end{tikzcd}\]
-	which exist if we additionally suppose that $X$ is contractible.
-\end{proof}
+
 \begin{exercise}
-	Let $\Fc$ be a foliation with compact leaves. Prove that its leaf space is Hausdorff.
+	Let $B$ be a trivial real vector bundle over a circle $S^{1}$, $x\in S^{1}$ a point, and $A\in \operatorname{Aut}(B|_{x})$ a linear automorphism with all eigenvalues real and positive, or all eigenvalues complex.Construct a connection $\nabla$ such that its holonomy in $x$ is equal to $A$.
 \end{exercise}
-\begin{proof}
-	I shall try to adapt the following familiar statement:
-	\begin{prop}
-		If a Lie group acts continuously and properly on a manifold then the orbit space is Hausdorff. (\textbf{\textit{Properly}} means that the map $G\times M\to M\times M$ given by $(g,x)\mapsto (gx,x)$ is proper, ie. preimage of compact subset is compact.)
-	\end{prop}
-	
-	The conclusion follows from the general topology statement that 
-	\begin{prop}
-		Given any open quotient map $q:X\to Y$, the space $Y$ is Hausdorff iff $X\times_YX=\{(x_1,x_2)\in X\times X:q(x_1)=q(x_2)\}$ is closed in $X\times X$.
-	\end{prop}
-	In our case, $M\times_{\Fc}M$ is the subset of $M\times M$ of pairs $(x,y)$ such that $x$ and $y$ are in the same leaf.
-	
-	Let's define a Lie group $G$ acting properly and discontinuously on our foliated manifold $M$. \href{https://math.stackexchange.com/questions/3576222/a-foliations-as-a-g-stucture}{Here} might be a hint towards an answer… though it is still not clear to me what a $G$-structure is.
-\end{proof}
+
 \begin{exercise}
-	Construct a rank 1 foliation with compact leaves on a 3-sphere $M$, such that the projection $M\to M/\Fc$ to its leaf space is not a smooth submersion.
+	Let $B$ be a rank 1 bundle on $\mathbb{R}^2$, and $V \in \Lambda^{2}(\mathbb{R}^{2})$ a 2-form. Construct a connection on $B$ such that its curvature is equal to $V$.
 \end{exercise}
-\begin{proof}
-	The Hopf fibration $S^1\hookrightarrow S^3\to S^2$ induces a foliation of $S^3$ with fibers $S^1$. However, the projection onto the fiber space $S^2$ is indeed a smooth submersion.
-\end{proof}
+
 \begin{exercise}
-	Find a foliation on a compact manifold with all leaves compact, and not all of them diffeomorphic.
+	Let $B$ be a bundle on $\mathbb{R}^{2}$, and $R\in \Lambda^{2}(T^{*}_{0}\mathbb{R}^{n})\times \operatorname{End}(B|_{0})$ a 2-form on the tangent vector space in $0$ with values in $\operatorname{End}(B|_{0})$. Construct a connection with curvature $\Theta$ such that $\Theta|_{0}=R$.
+	\begin{enumerate}[label=\alph*.]
+		\item When $n=2$, and $R$ takes values in traceless endomorphisms.
+		\item When $n=2$, and $R$ arbitrary.
+		\item For arbitrary $n$ and $R$.
+	\end{enumerate}
 \end{exercise}
-\begin{proof}
-	\iffalse Glueing two Möbius strips along their boundaries produces a Klein bottle as in the following picture:
-	\begin{center}
-		\includegraphics[width=0.7\linewidth]{klein-bottle}
-	\end{center}
-	This shows that the Klein bottle is a double co\fi
-	(From \href{https://math.stackexchange.com/questions/1647836/what-can-be-said-about-the-leaves-of-a-regular-foliation}{StackExchange}) Consider $S^2\times I/\sim$ where we identify antipodal points in $S^2\times\{0\}$ and antipodal points in $S^2\times\{1\}$. It appears that this space is diffeomorphic to $\R P^3\#\R P^3$. Then the fibers of the quotient map are a foliation with leaves $S^2$ on $S^2\times(0,1)$ and $\R P^2$ on the ends.
-\end{proof}
-\printbibliography
+
 \end{document}
