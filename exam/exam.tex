@@ -1,7 +1,9 @@
 \input{~/github/config/preamble.sty}%available at github.com/danimalabres/config
+\input{~/github/config/thms-eng.sty}%available at github.com/danimalabres/config
 
-%\usepackage[style=authortitle-terse,backend=bibtex]{biblatex}
-%\addbibresource{bibliography.bib}
+
+\usepackage[style=authortitle-terse,backend=bibtex]{biblatex}
+\addbibresource{~/github/config/bibliography.bib}
 
 \begin{document}
 
@@ -35,7 +37,7 @@
 		&=\sqrt{-1}\alpha(v).
 	\end{align*}
 
-But then again it may be more suitable to find a form whose \textit{differential} is complex-linear. After consulting with Misha, he said to find a form that is closed… but $d Jd(f)$ is already closed!
+But then again it may be more suitable to find a form whose \textit{differential} is complex-linear. After consulting with Misha, he said to find a form that is closed… but $Jd(f)$ is already closed!
 \end{proof}
 
 \addcontentsline{toc}{subsection}{Exercise 1.7}
@@ -69,7 +71,11 @@ But then again it may be more suitable to find a form whose \textit{differential
 
 
 
-	Now let's solve our exercise. Consider $\eta=du$ for the same $u$ as above. We already know that $u$ is not the real part of a holomorphic function but perhaps there is another function  $\tilde{u}$ such that $\eta= d\tilde{u}$ and $\tilde{u}$ is is the real part of a holomorphic function. Then $d(u-\tilde{u})=0$ so  $u-\tilde{u}$ is constant so $\tilde{u}(z)=\log|z-w|+\lambda$. But the same argument shows that such a function cannot be the real part of a holomorphic function.
+Now let's solve our exercise. Consider $\eta=du$ for the same $u$ as above. We already know that $u$ is not the real part of a holomorphic function but perhaps there is another function  $\tilde{u}$ such that $\eta= d\tilde{u}$ and $\tilde{u}$ is is the real part of a holomorphic function. Then $d(u-\tilde{u})=0$ {\color{6}so  $u-\tilde{u}$ is constant} so $\tilde{u}(z)=\log|z-w|+\lambda$. But the same argument shows that such a function cannot be the real part of a holomorphic function.
+
+Let me be more clear about why $d(u-\tilde{u})=0\implies u-\tilde{u}$ is constant. $u(z)=\operatorname{log}|z-w|$ is a real function, and $\tilde{u}$ is also a real function by hypothesis. Now remember (see for example Huybrechts, \textit{Complex geometry} eq. 1.10 in p. 43) that the complex exterior differential is just the usual gradient; namely if $x+iy$ are coordinates of  $\mathbb{C}$, $df=\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}$ locally for a complex-valued function $f$ (just see Ahlfors p.27). Then
+\[d(u-\tilde{u})= \frac{\partial }{\partial x}(u-\tilde{u})+ \frac{\partial }{\partial y}(u-\tilde{u})=\frac{\partial }{\partial x}(u-\tilde{u})\]
+so that the gradient of $u-\tilde{u}$ is zero, Which means $u$ and  $\tilde{u}$ differ by a constant.
 \end{proof}
 
 \addcontentsline{toc}{subsection}{Exercise 2.7}
@@ -78,15 +84,22 @@ But then again it may be more suitable to find a form whose \textit{differential
 \end{manualexercise}
 
 \begin{proof}[Solution]
-	I could prove that $\sum_{i=0}^\infty f'(z)$ (without the bars) converges (uniformly) on $ \Delta$. However, looks like the answers might be that such a function cannot exist.
+	It looks like this is not always true. In my attempts of proving it I found a proof that $\sum_{i=0}^\infty f'(z)$ (without the bars) converges (uniformly) on $ \Delta$.
 
 
+\addcontentsline{toc}{subsubsection}{A counter-example}
+\vspace{1em}\textbf{A counter-example}
 
-\addcontentsline{toc}{subsubsection}{A possible counter-example}
-\vspace{1em}\textbf{A possible counter-example}
-
-(See \href{https://math.stackexchange.com/questions/380446/prove-that-a-bounded-analytic-function-in-the-right-half-plane-which-vanishes-at}{StackExchange}). The proposed counter example is
+(See \href{https://math.stackexchange.com/questions/380446/prove-that-a-bounded-analytic-function-in-the-right-half-plane-which-vanishes-at}{StackExchange}). The counter example is
 	\[f_n(z)=\frac{1}{n^2}\sqrt{1+z} \]
+	First notice that the series of this function converges uniformly to $\pi^2/6\sqrt{1+z}$. This is just because $\sum 1/n^2$ converges to $\pi^2/6$ (this was proved first by Euler and apparently some people didn't believe him, see \href{https://math.stackexchange.com/questions/8337/different-ways-to-prove-sum-k-1-infty-frac1k2-frac-pi26-the-b}{here} for some proofs), and we can factor out of the series the term $\sqrt{1+z}$. To see convergence is uniform we simply note that $|\sqrt{1+z}|$ is bounded by 2 for all $z\in\Delta$.
+
+	In turn, the series of derivatives is $\sum \frac{1}{2n^2}\frac{1}{\sqrt{1+z} }$ which converges to the derivative of series $\frac{\pi^2}{6}\frac{1}{\sqrt{1+z} }$ but not uniformly. To make sure suppose that for every $\varepsilon>0$ there is $N\in\mathbb{N}$ such that for every $n>N$ and  $z\in\Delta$ 
+	\[\left| \frac{1}{2\sqrt{1+z} }\left( \frac{\pi^2}{6}-\sum_{i=1}^n\frac{1}{i^2} \right)  \right| <\varepsilon\]
+	then
+	\[\frac{1}{2\varepsilon}\left| \frac{\pi^2}{6}-\sum_{i=1}^n\frac{1}{i^2} \right|<|\sqrt{1+z} | \]
+	but since we can take $z$ as close as $-1$ as we desire, the expression on the left is forced to be zero, which is not true.
+
 	The reason is that the series converges to $\frac{\pi^2}{6}\sqrt{1+z} $, but the series of derivatives is unbounded, so "it cannot be uniformly convergent". But of course unboundedness alone does not imply that the sequence of derivatives cannot converge uniformly---for any unbounded function on a domain, just substracting a $1/n$-term will produce a uniformly convergent series of unbounded functions.
 \vspace{1em}
 
@@ -120,14 +133,51 @@ which says that $\sum_{i=1}^{\infty} f'$ converges to the derivative of $\sum_{i
 \begin{enumerate}[label=\textbf{Step \arabic*}]
 		\item Pass to a function whose domain is the unit disk by composing $f$ with a M\"obius transformation that maps the disk to the right-hand plane, namely $z\mapsto \frac{1}{1+z}-\frac{1}{2}$. So define $g(z)=f\left( \frac{1}{1+z}-\frac{1}{2} \right) $.
 
-		\item $g(z)=0$ when $\frac{1}{1+z}-\frac{1}{2}$ is an integer $n$ so define $z_{n}=-1+\frac{1}{n+\frac{1}{2}}$.
+	$g(z)=0$ when $\frac{1}{1+z}-\frac{1}{2}$ is an integer $n$ so define $z_{n}=-1+\frac{1}{n+\frac{1}{2}}$.
 
-		$\prod_{n} |z_{n}| $ diverges to zero. That means that it converges to zero but the infinite sum (series) the logarithms diverges.
+		\item $\prod_{n} |z_{n}| $ diverges to zero. That means that it converges to zero but the infinite sum (series) the logarithms diverges.
+\clearpage
+\begin{thing4}{Exercise 8}[\cite{zo1}, 3.2.5, p. 148]\leavevmode
+An inifinite product $\prod_{k=1}^\infty e_k$ is said to converge if the sequence $\Pi_n=\prod_{k=1}^n e_k$ has a finite \textbf{nonzero} limit $\Pi$. We then set $\Pi=\prod_{k=1}^\infty e_k$. Show that
+\begin{enumerate}[label=(\alph*)]
+	\item[(b)]  if $\forall n \in N (e_n>0)$, then the infinite product converges $\prod_{n=1}^\infty$ converges if and only if the series  $\sum_{n=1}^\infty \operatorname{log}e_n$ converges.
+\end{enumerate}
+\end{thing4}
 
+\begin{remark}\leavevmode
+The proof is straightforward using elementary properties of the logarithm ($\operatorname{log}(ab)=\operatorname{log}a+\operatorname{log}b$) and the exponential ($\operatorname{exp}(a+b)=\operatorname{exp}a+\operatorname{exp}b$), as well as their continuity. The caveat is that if the product converges to zero, taking logarithms of the partial products gives a series diverging to $-\infty$ (we say that the product \textit{\textbf{diverges to zero}}). The following exercise is an example of this.
+\end{remark}
+
+\begin{claim}\leavevmode
+\begin{align*}
+			\prod_{n\geq 0}\left|  -1+\frac{1}{n+\frac{1}{2}}\right|=0.
+				\end{align*}
+\end{claim}			
+\begin{proof}\leavevmode
+By taking exponent of the partial sums of the following series, we see it's enough to show that
+\begin{equation}\label{eq:log}\sum_{n \geq 0}\operatorname{log}\left|  -1+\frac{1}{n+\frac{1}{2}}\right|=-\infty.
+\end{equation}
+To show this first notice that $\left|  -1+\frac{1}{n+1/2}\right|$ is just  $1-\frac{1}{n+1/2}$. We can also quickly notice that $\operatorname{log}\left(1-\frac{1}{n+1/2}\right)$ is a sequence of negative numbers convering to 0.
+
+(It was not immediate to me why the this series should diverge or converge. The following argument was provided by ChatGPT.)
+
+We can prove the series diverges if we find a divergent series that bounds it from above. Such series is $\sum\frac{-1}{n+1/2}$. Indeed, it turns out that for every number $0\leq x<1$,
+\[\operatorname{log}(1-x) \leq -x.\]
+To see why, define the function $f(x)=\operatorname{log}(1-x)+x$ and differentiate to find
+\[\frac{d}{dx}\operatorname{log}(1-x)+x=-\frac{1}{1-x}+1=\frac{1}{1-x}+\frac{1-x}{1-x}=\frac{-x}{1-x}\leq 0,\]
+and since also $f(0)=0$, we have that
+\[\operatorname{log}(1-x)+x\leq 0,\qquad 0\leq x<1.\]
+Finally just recall that $\sum_{n\geq 0}\frac{1}{n}$ diverges (and behaves like $\sum \frac{1}{n+1/2}$ for lage $n$). This confirms \cref{eq:log}.
+
+
+
+
+\end{proof}
+\clearpage
 		\item Consider the inverse of a finite Blaschke product that vanishes on the $z_{n}$ (this is why we put everything inside the unit disk). It is $\tilde{B}_{k}(z)=\prod_{n=1}^{k} \frac{1-z\cdot z_{n}}{z-z_{n}}  $. Also consider the product $g\cdot \tilde{B}_{k}$, which is analyitic because $g$ vanishes at the poles of $\tilde{B}_{k}$.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Figure_1.png}
+	\includegraphics[width=0.3\textwidth]{Figure_1.png}
 	\caption{Domain coloring plot for $\tilde{B}$}
 \end{figure}
 
@@ -196,7 +246,12 @@ Integrating a non-zero vector field on $M$ gives a complex 1-parameter subgroup 
 \begin{proof}[Solution]
 %	Let's see what's up with the induced map $\pi_{1}(S^{2})\to \pi_{1}(M)$. Well it is trivial because $S^{2}$ is simply-connected.
 
-	All higher homotopy groups of Riemann surfaces of nonzero genus are trivial by covering space argument. For $S^{2}$ itself, the statement does not hold since it would imply that $-\operatorname{Id}$ is homotopic to $\operatorname{Id}$, which is not true (but of course, the fundamental group of $S^2$ is not infinite).
+	{\color{4}\bfseries Solution using Uniformization theorem.}\hspace{.5em}All higher homotopy groups of Riemann surfaces of nonzero genus are trivial by covering space argument (covering space is contractible by Uniformization theorem). For $S^{2}$ itself, the statement does not hold since it would imply that $-\operatorname{Id}$ is homotopic to $\operatorname{Id}$, which is not true (but of course, the fundamental group of $S^2$ is not infinite).
+
+	{\color{4}\bfseries Solution using Witehead theorem.}\hspace{.5em}Universal cover $U$ is contractible by Witehead theorem. Indeed, a point and $U$ are weakly homotopically equivialent (=all homotopy groups are the same). $\pi_{1}(U) =0$ by universal cover being simply connected. To see that all other homotopy groups vanish use Hurewicz to notice that if one of them was nonzero it would be isomorphic to the homology group in the corresponding degree. But  $U$ is acyclic (=all homology groups vanish). Above degree 2 it is clear by dimension, and for degree 2 use Poincaré duality with compact support to see that $H_2(U)=H^{0}_c(U)$. However, the definition of $H^{2}(M)$ is the set of cohomology classes of smooth real-valued locally constant (since they satisfy $df=0$) functions with compact support. Now this group is trivial beacuse $U$ cannot be compact, which in turn is because the fundamental group of the Riemann surface is infinite and the universal cover is a discrete cover.
+
+{\color{4}\bfseries A more elementary proof?}\hspace{.5em}Let $f:S^2\longrightarrow M$ be any continuous map. The induced map on fundamental groups is $f^* :\pi_{1}(S^2) \longrightarrow \pi_{1}(M)$ but $\pi_{1}(S^2)$ is trivial, there exists a lift $\tilde{f}$ to any covering space. Also we have an action of $\pi_{1}(M)$ on the universal cover, so that we have infinitely many copies of $\tilde{f}(S^2)$ in the universal cover.
+
 \end{proof}
 
 \addcontentsline{toc}{subsection}{Exercise 5.8}
